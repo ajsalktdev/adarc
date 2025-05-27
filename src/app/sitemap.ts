@@ -6,7 +6,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const currentDate = new Date().toISOString()
 
   // Base URL from your existing sitemap
-  const baseUrl = 'https://newadarc.vercel.app'
+  const baseUrl = 'https://adarc-two.vercel.app'
 
   // Static routes from your existing sitemap
   const staticRoutes: MetadataRoute.Sitemap = [
