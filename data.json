@@ -1,0 +1,406 @@
+{
+  "product": [
+    {
+      "id": "1",
+      "productTitle": "Nanotech Asus Powered Back to Future Gaming Rendering PC I7 14700F 32 GB DDR5 RAM 2TB NV",
+      "image": "/temp/1.png",
+      "price": 2000,
+      "category": "Laptop",
+      "oldPrice": 2500.00,
+      "offer": "20%",
+      "isOffer": true,
+      "inStock": false
+    },
+    {
+      "id": "2",
+      "productTitle": "Monster-Hunter Gaming PC (Core I7-14700F, 32 GB DDR5 RAM, RTX 4060 Ti 8 GB GPU)",
+      "image": "/temp/2.png",
+      "price": 2000,
+      "category": "Storage",
+      "inStock": true
+    },
+    {
+      "id": "3",
+      "productTitle": "Jupiter Gaming PC (Core I7-12700, 32 GB DDR5 RAM, RTX 4070 SUPER 12GB GPU)",
+      "image": "/temp/5.png",
+      "price": 2000,
+      "category": "Gaming",
+      "inStock": true
+    },
+    {
+      "id": "4",
+      "productTitle": "MSI MEG Z790 ACE MAX Intel LGA 1700 E-ATX Motherboard, 4x DDR5 UDIMM, 192GB, 1x Type-C",
+      "image": "/temp/4.png",
+      "price": 2000,
+      "category": "Camera",
+      "oldPrice": 2500.00,
+      "offer": "20%",
+      "isOffer": true,
+      "inStock": false
+    },
+    {
+      "id": "14",
+      "productTitle": "Nanotech Asus Powered Back to Future Gaming Rendering PC I7 14700F 32 GB DDR5 RAM 2TB NV",
+      "image": "/temp/5.png",
+      "price": 2000,
+      "category": "Laptop",
+      "inStock": true
+    },
+    {
+      "id": "24",
+      "productTitle": "Monster-Hunter Gaming PC (Core I7-14700F, 32 GB DDR5 RAM, RTX 4060 Ti 8 GB GPU)",
+      "image": "/temp/2.png",
+      "price": 2000,
+      "category": "Storage",
+      "inStock": true
+    },
+    {
+      "id": "43",
+      "productTitle": "Jupiter Gaming PC (Core I7-12700, 32 GB DDR5 RAM, RTX 4070 SUPER 12GB GPU)",
+      "image": "/temp/1.png",
+      "price": 2000,
+      "category": "Gaming",
+      "inStock": true
+    },
+    {
+      "id": "44",
+      "productTitle": "MSI MEG Z790 ACE MAX Intel LGA 1700 E-ATX Motherboard, 4x DDR5 UDIMM, 192GB, 1x Type-C",
+      "image": "/temp/4.png",
+      "price": 2000,
+      "category": "Camera",
+      "oldPrice": 2500.00,
+      "offer": "20%",
+      "isOffer": true,
+      "inStock": true
+    },
+    {
+      "id": "343",
+      "productTitle": "Jupiter Gaming PC (Core I7-12700, 32 GB DDR5 RAM, RTX 4070 SUPER 12GB GPU)",
+      "image": "/temp/4.png",
+      "price": 2000,
+      "category": "Gaming",
+      "inStock": true
+    },
+    {
+      "id": "443",
+      "productTitle": "MSI MEG Z790 ACE MAX Intel LGA 1700 E-ATX Motherboard, 4x DDR5 UDIMM, 192GB, 1x Type-C",
+      "image": "/temp/5.png",
+      "price": 2000,
+      "category": "Camera",
+      "oldPrice": 2500.00,
+      "offer": "20%",
+      "isOffer": true,
+      "inStock": true
+    },
+    {
+      "id": "214",
+      "productTitle": "Monster-Hunter Gaming PC (Core I7-14700F, 32 GB DDR5 RAM, RTX 4060 Ti 8 GB GPU)",
+      "image": "/temp/2.png",
+      "price": 2000,
+      "category": "Storage",
+      "inStock": true
+    },
+    {
+      "id": "431",
+      "productTitle": "Jupiter Gaming PC (Core I7-12700, 32 GB DDR5 RAM, RTX 4070 SUPER 12GB GPU)",
+      "image": "/temp/1.png",
+      "price": 2000,
+      "category": "Gaming",
+      "oldPrice": 2500.00,
+      "offer": "20%",
+      "isOffer": true,
+      "inStock": true
+    }
+  ],
+  "brands": [
+    {
+      "id": "1",
+      "image": "/temp/b1.png"
+    },
+    {
+      "id": "2",
+      "image": "/temp/b2.png"
+    },
+    {
+      "id": "3",
+      "image": "/temp/b3.png"
+    },
+    {
+      "id": "4",
+      "image": "/temp/b4.png"
+    },
+    {
+      "id": "14",
+      "image": "/temp/b5.png"
+    },
+    {
+      "id": "12",
+      "image": "/temp/b1.png"
+    },
+    {
+      "id": "22",
+      "image": "/temp/b2.png"
+    },
+    {
+      "id": "32",
+      "image": "/temp/b3.png"
+    },
+    {
+      "id": "42",
+      "image": "/temp/b4.png"
+    },
+    {
+      "id": "142",
+      "image": "/temp/b5.png"
+    }
+  ],
+  "banner": [
+    {
+      "id": "1",
+      "image": "/temp/ban1.svg"
+    },
+    {
+      "id": "2",
+      "image": "/temp/ban2.svg"
+    }
+  ],
+
+  "bannerMiddle": [
+    {
+      "id": 1,
+      "image": "/temp/md1.webp"
+    },
+    {
+      "id": 2,
+      "image": "/temp/md2.jpg"
+    },
+    {
+      "id": 3,
+      "image": "/temp/md3.png"
+    }
+  ],
+  "bannerBottom": [
+    {
+      "id": 1,
+      "image": "/temp/bottomBan1.svg"
+    },
+    {
+      "id": 2,
+      "image": "/temp/bottomBan2.svg"
+    }
+  ],
+  "productPage": {
+    "title": "OLED Super Retina XDR Display, A18 Pro Chip, 6-Core CPU, 6-Core GPU, 16-Core Neural Engine, 256GB Storage, 5G/Wi-Fi 7, Face ID, INTL Ver, Black Titanium | iP16PR-256INTLBT",
+    "brand": "Apple",
+    "sku": "5443267",
+    "model": "iPhone 16 Pro",
+    "images": [
+      "/temp/p1.jpg",
+      "/temp/p2.jpg",
+      "/temp/p3.jpg",
+      "/temp/p4.jpg",
+      "/temp/p2.jpg",
+      "/temp/p3.jpg",
+      "/temp/p4.jpg",
+      "/temp/p5.jpg",
+      "/temp/p6.jpg",
+      "/temp/p7.jpg",
+      "/temp/p5.jpg",
+      "/temp/p6.jpg",
+      "/temp/p7.jpg"
+    ],
+    "capacity": [
+      {
+        "id": 1,
+        "title": "512GB"
+      },
+      {
+        "id": 2,
+        "title": "1TB"
+      },
+      {
+        "id": 3,
+        "title": "256GB"
+      }
+    ],
+    "color": [
+      {
+        "id": 1,
+        "title": "red"
+      },
+      {
+        "id": 2,
+        "title": "green"
+      },
+      {
+        "id": 3,
+        "title": "blue"
+      },
+      {
+        "id": 11,
+        "title": "red"
+      },
+      {
+        "id": 12,
+        "title": "green"
+      },
+      {
+        "id": 31,
+        "title": "blue"
+      }
+    ],
+    "about": [
+      {
+        "id": 1,
+        "title": "STUNNING TITANIUM DESIGN—iPhone 16 Pro Max has a strong and light titanium design with a larger 6.9-inch Super Retina XDR display.2 It’s remarkably durable with the latest-generation Ceramic Shield material that’s 2x tougher than any smartphone glass."
+      },
+      {
+        "id": 2,
+        "title": "BUILT FOR APPLE INTELLIGENCE—Apple Intelligence is the personal intelligence system that helps you write, express yourself, and get things done effortlessly.1 With groundbreaking privacy protections, it gives you peace of mind that no one else can access your data."
+      },
+      {
+        "id": 3,
+        "title": "STUNNING TITANIUM DESIGN—iPhone 16 Pro Max has a strong and light titanium design with a larger 6.9-inch Super Retina XDR display.2 It’s remarkably durable with the latest-generation Ceramic Shield material that’s 2x tougher than any smartphone glass."
+      },
+      {
+        "id": 4,
+        "title": "STUNNING TITANIUM DESIGN—iPhone 16 Pro Max has a strong and light titanium design with a larger 6.9-inch Super Retina XDR display.2 It’s remarkably durable with the latest-generation Ceramic Shield material that’s 2x tougher than any smartphone glass."
+      }
+    ],
+    "product": [
+      {
+        "id": 1,
+        "image": "/temp/p1.jpg"
+      },
+      {
+        "id": 2,
+        "image": "/temp/p2.jpg"
+      },
+      {
+        "id": 3,
+        "image": "/temp/p3.jpg"
+      },
+      {
+        "id": 4,
+        "image": "/temp/p4.jpg"
+      },
+      {
+        "id": 5,
+        "image": "/temp/p5.jpg"
+      },
+      {
+        "id": 6,
+        "image": "/temp/p6.jpg"
+      },
+      {
+        "id": 7,
+        "image": "/temp/p7.jpg"
+      }
+    ],
+    "deliveryHighlight": [
+      {
+        "title": "15 days Returnable",
+        "image": "/temp/hight1.png"
+      },
+      {
+        "title": "Cash on Delivery",
+        "image": "/temp/hight1.png"
+      },
+      {
+        "title": "Free delivery",
+        "image": "/temp/high3.png"
+      },
+      {
+        "title": "Top brand",
+        "image": "/temp/high4.png"
+      },
+      {
+        "title": "Secure Transaction",
+        "image": "/temp/high5.png"
+      }
+    ]
+    
+  },
+  "emirates": [
+      {
+        "id": 1,
+        "title": "Abu Dhabi",
+        "deliveryTime" : 1
+      },
+      {
+        "id": 2,
+        "title": "Dubai",
+        "deliveryTime" : 2
+
+      },
+      {
+        "id": 3,
+        "title": "Al Ain",
+        "deliveryTime" : 3
+        
+      },
+      {
+        "id": 4,
+        "title": "Sharjah",
+        "deliveryTime" : 4
+
+      },
+      {
+        "id": 5,
+        "title": "Fujairah",
+        "deliveryTime" : 4
+
+      },
+      {
+        "id": 6,
+        "title": "Umm Al-Quwain",
+        "deliveryTime" : 4
+
+      },
+      {
+        "id": 7,
+        "title": "Ras Al Khaimah",
+        "deliveryTime" : 4
+
+      }
+    ],
+    "mainBanner": [
+    {
+      "id": 1,
+      "image": "/temp/ban1.webp"
+    },
+    {
+      "id": 2,
+      "image": "/temp/banner.webp"
+    },
+    {
+      "id": 3,
+      "image": "/temp/ban2.webp"
+    }
+
+  ],
+  "mainBannerMobile": [
+    {
+      "id": 1,
+      "image": "/temp/ban1.webp"
+    },
+    {
+      "id": 2,
+      "image": "/temp/banner.webp"
+    },
+
+    {
+      "id": 3,
+      "image": "/temp/ban2.webp"
+    }
+  ],
+   "deliveryMethod" : [
+    {
+      "option" : "Delievery to address"
+    },
+    {
+      "option" : "Pick up from store"
+    }
+  ]
+
+}

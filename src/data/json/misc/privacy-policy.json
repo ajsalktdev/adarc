@@ -1,0 +1,88 @@
+{
+    "paragraph": "This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from adarccomputer.com",
+    "data": [
+        {
+            "title": "Adarccomputer.com’s approach to security",
+            "description": "Adarccomputer.com is a PCI compliant company and uses highest security standards to ensure its customers secure online transactions. Being the data controller, the site is responsible to secure your data and is committed towards the practice of advanced firewall technology for the order processes."
+        },
+        {
+            "title": "Respecting Your Privacy",
+            "description": "Adarccomputer.com is committed to respecting your privacy. Therefore we have set the highest ethical standards to protect your sensitive information. This privacy policy describes the type of information we collect, why we collect it and with whom we share it. We value the trust you have placed in us. If you have any queries regarding our privacy policy, feel free to contact us at hello@adarccomputer.com"
+        },
+        {
+            "title": "Nature of information we collect",
+            "bulletin": [
+                {
+                    "id": 1,
+                    "text": "We may collect your contact details, such as your name, email address, phone number, postal address and delivery address (if different)."
+                },
+                {
+                    "id": 2,
+                    "text": "We may require your banking details such as credit card number, cardholder name, expiration date and CVV or other details necessary for Internet banking."
+                },
+                {
+                    "id": 3,
+                    "text": "In order to enhance your shopping experience, we may seek order details of your previous purchases, including transactions and pricing details."
+                },
+                {
+                    "id": 4,
+                    "text": "We may also collect your demographic information (gender, age, income) to conduct optional online surveys so as to assess the quality of our services."
+                },
+                {
+                    "id": 5,
+                    "text": "We will collect your session and login information, which include your IP address, operating system, browser type, browser language, date and time of request."
+                },
+                {
+                    "id": 6,
+                    "text": "We will also collect sign in information for third party accounts shared on our website such as Google, Facebook, Twitter, Instagram and other social channels."
+                },
+                {
+                    "id": 7,
+                    "text": "We shall ask for email communication by any user, for product inquiry, order and transaction details, for any complaints and disputes etc."
+                }
+            ]
+        },
+        {
+            "title": "How we use or share it",
+            "bulletin": [
+                {
+                    "id": 1,
+                    "text": "Our affiliates and partners who are involved in buying and delivering process shall use your information. In case of a merger or acquisitions, other business entities may also use your information."
+                },
+                {
+                    "id": 2,
+                    "text": "An aggregated form of information may be used to understand the consumer behaviour so that we can enhance your shopping experience. Our business and marketing activities may also make use of the demographical profiles of our users."
+                },
+                {
+                    "id": 3,
+                    "text": "To inform you about deals, offers, new launches, shipment status, informational and promotional content, we shall use your contact information. There is an opt-out alternative available for such services."
+                },
+                {
+                    "id": 4,
+                    "text": "Our cookie policy is used to customize your experience, we may use the information stored in your browser to let you review the recently viewed items, your wish list, cart features etc."
+                },
+                {
+                    "id": 5,
+                    "text": "To understand the consumer behaviour, buying preferences and to analyze how user interaction is being forwarded, we will use traffic flow and session login information."
+                },
+                {
+                    "id": 6,
+                    "text": "User engagement and time spent by each user on our site is accessed with the help of your IP address and traffic source information. We may use it to measure the performance."
+                },
+                {
+                    "id": 7,
+                    "text": "User information may be required in case of legal disputes, regulatory or statutory requirements, troubleshoot problems, collect fees owed, detect or protect against errors, prevent abuse of our services, prevent violation of rights of third parties, enforce our terms and conditions."
+                }
+            ]
+        },
+        {
+            "title": "User Consent",
+            "description": "We conduct our business in an ethical manner, hence we collect the personal information of our users or customers only to serve you with best products and services. We do not sell, trade, share or transfer your information to any third parties. \n\n For enhanced shopping experience, Adarccomputer.com uses cookies to store your browsing information. Cookies do not save your PII (personally identifiable information), though you can change the cookie settings as per your preferences. By using our website, we believe that you consent to the cookie policy.\n\nWhen you access our website or fill in your details to buy the products or services offered by the website, the site will accept it as your consent with the privacy policy. For users who are not comfortable with the clause and conditions related to sharing their personally identifiable information, it is requested to abort the use of the website. We also provide an opt-out option to our registered users to unsubscribe from all the non-essential emails and communication from us and our partners.",
+            "note": "The privacy policy of adarccomputer.com may be subjected to changes at any time to include or exclude clauses, thus users are requested to visit this page on a regular basis to stay up to date with the changes."
+        },
+        {
+            "title": "For More Information",
+            "description": "In case you have any questions regarding our privacy practices, feel free to contact us at sales@adarccomputer.com or by reaching out to the following mailing address: \n\n Hamdan Street, Abu Dhabi."
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Private pages
+Disallow: /login
+Disallow: /signup
+Disallow: /my-account
+Disallow: /checkout
+Disallow: /cartPage
+Disallow: /reset-password
+
+# Sitemap
+Sitemap: https://adarccomputers.com/sitemap.xml 

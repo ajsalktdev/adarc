@@ -1,0 +1,64 @@
+[
+    {
+        "title": "How a product is shipped and delivered in Adarccomputer.com?",
+        "description": "We have contracted with multiple shipping providers to provide several options for our customers to choose from. Customers can track their shipments through the service providers' tracking system for a more accurate delivery time frame. Upon shipment of the order, the customer receives the tracking information including the tracking number of the shipment to track with the shipping service provider."
+    },
+    {
+        "title": "What are the delivery charges for an order?",
+        "description": "Delivery charge varies with each product and customers location. We incur relatively high shipping costs on low-value items. In such cases, charging a nominal delivery charge helps us offset logistics costs.\n\nCurrently, we charge a flat shipping rate of AED 14 for all orders below AED 500. It’s in our sole discretion to update this amount from time to time unless there is a specific order from the government regulators."
+    },
+    {
+        "title": "Why does the delivery date not correspond to the delivery timeline of X-Y business days?",
+        "description": "It is possible that we or our courier partners have a holiday between the day you’ve placed your order and the date of delivery, which is based on the timelines shown on the product page. In this case, we add a day to the estimated date. Some courier partners do not work on Sunday and this is factored into the delivery dates."
+    },
+    {
+        "title": "What is the estimated delivery time?",
+        "description": "We generally confirm the order, pack the product, and ship the items as soon as possible on business days (normally within 24 hour) or within the time specified on the product page (2-3 working days). Business days exclude public holidays and Sundays."
+    },
+    {
+        "title": "Estimated delivery time depends on the following factors:",
+        "bulletin": [
+            {
+                "id": 1,
+                "text": "Product’s availability with us."
+            },
+            {
+                "id": 2,
+                "text": "The destination to which you want the order shipped to."
+            }
+        ]
+    },
+    {
+        "title": "Are there any hidden costs on items sold by Adarccomputer.com?",
+        "description": "There are NO hidden charges when you make a purchase on adarccomputer.com. List prices are final and all-inclusive. The price you see on the product page is exactly what you would pay. Delivery charges are not hidden charges and are charged (if at all) extra depending on other factors like order value and delivery address."
+    },
+    {
+        "title": "Why do you not ship to certain areas?",
+        "description": "Please enter your area on the product page (you don’t have to enter it every single time) to know whether the product can be delivered to your location. If you haven’t provided your area until the checkout stage, the area in your shipping address will be used to check for serviceability."
+    },
+    {
+        "title": "Whether your location can be serviced or not depends on:",
+        "bulletin": [
+            {
+                "id": 1,
+                "text": "Whether we ship to your location"
+            },
+            {
+                "id": 2,
+                "text": "Repair or replacement under the terms of this warranty does not provide right to extension or renewal of the warranty period."
+            },
+            {
+                "id": 3,
+                "text": "At times we prefer not to ship to certain locations. This is entirely at our discretion."
+            },
+            {
+                "id": 4,
+                "text": "If the customer’s location is so far away from our warehouse, we may charge a nominal delivery charge on your order. Otherwise, we do not charge any fee as delivery charge!"
+            }
+        ]
+    },
+    {
+        "title": "Adarccomputer.com will NOT deal or provide any services or products to any of OFAC (Office of Foreign Assets Control) sanctions countries in accordance with the law of UAE.",
+        "description": ""
+    }
+]

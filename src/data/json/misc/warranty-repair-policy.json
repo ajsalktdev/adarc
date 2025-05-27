@@ -1,0 +1,74 @@
+{
+    "paragraph": "Our warranty policy helps you stay covered in case of defects in material, design and workmanship after purchase of the product. Upon purchasing a product, you will be able to see the applicable warranty for that specific product on its page.\n\nIf your item is eligible for repair, you will be able to raise the warranty request through the Service Requests page in your Adarc computer user account. Adarc computer warranty team shall contact you within 24 hours for claim validation and troubleshooting. If the issue is still unresolved, we will send a courier to collect the defective item from you free of charge.",
+    "note": "For electronic devices that have your personal data stored, it is very important that you back up any files and remove any passwords before sending them for repair; otherwise, the approved repair vendor may not be able to repair your device or wipe all the information. You may also want to erase your saved personal information from the item.",
+    "data": [
+        {
+            "title": "How long will the repair take?",
+            "description": "When the approved repair vendor receives your item, it will be inspected and the issue will be diagnosed. If the defect is covered by the warranty, you should receive your item within 18 business days, but could take slightly longer."
+        },
+        {
+            "title": "How much will the repair cost?",
+            "description": "If your item is still under warranty and the problem is covered by the warranty, and the warranty has not been voided, then your item will be repaired for free.\n\n If your item can't be repaired but is still under the manufacturer's warranty, we will issue a replacement (from the same seller) or, if a replacement isn't available, you will be refunded in full.\n\n If the problem is not covered by the warranty, or if the warranty has been voided (for example if the item has been accidentally damaged), you will be contacted by the approved repair vendor with a quote for repair fees, if the repair is possible. You can decide whether to ask the approved repair vendor to proceed with the repair at an additional cost, or have the item returned to you free of charge. Payment for such repairs, including any applicable delivery charges, will have to be paid on delivery."
+        },
+        {
+            "title": "What is the repair status of my item?",
+            "description": "You can check the status of your repair by following the instructions in the repair confirmation e-mail you receive or by clicking More Details via Service Requests page in your Adarc computer user account, once your submit your repair request. "
+        },
+        {
+            "title": "Warranty policy:",
+            "description": "",
+            "bulletin": [
+                {
+                    "id": 1,
+                    "text": "Please note that in order to repair your item and return it to you, the approved repair vendor will need your contact details. We will provide your name, e-mail address and return address to the approved repair vendor, and we require them to comply with relevant data protection legislation in relation to such information. We will send your contact details to the approved repair vendor only as required in connection with the repair service."
+                },
+                {
+                    "id": 2,
+                    "text": "Not all products are covered by the warranty, always check the product listing to know if it includes warranty benefits."
+                },
+                {
+                    "id": 3,
+                    "text": "Repair or replacement under the terms of this warranty does not provide right to extension or renewal of the warranty period."
+                },
+                {
+                    "id": 4,
+                    "text": "The time required to obtain device information or customer approval is not included within the Turn Around Time (TAT) of the repair process."
+                },
+                {
+                    "id": 5,
+                    "text": "The customer confirms that all information provided during the warranty claim is correct."
+                },
+                {
+                    "id": 6,
+                    "text": "The warranty will not be covered under the below conditions:",
+                    "conditions": [
+                        {
+                            "id": "a",
+                            "text": "Defect or damage is the result of the customer's misuse and non-abidance by the instructions for use."
+                        },
+                        {
+                            "id": "b",
+                            "text": "Liquid spill on the product."
+                        },
+                        {
+                            "id": "c",
+                            "text": "Product having un-authorized repairs."
+                        },
+                        {
+                            "id": "d",
+                            "text": "Using the product not for its intended purposes (e.g.: using Graphic Cards for cryptocurrency mining)."
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "text": "The customer shall ensure that the item is packed in its original box or wrapped safely to avoid any damage during transit. If the packaging is not done safely which leads to damage, Adarc computer will not be responsible for the same and the claimed item will be returned to the customer without servicing."
+                }
+            ]
+        },
+        {
+            "title": "",
+            "description": "For more information, you may contact us through email, social media or live chat on our website, or by calling our call center on +971 2 6763999."
+        }
+    ]
+}

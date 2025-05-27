@@ -1,0 +1,26 @@
+[
+    {
+        "title": "What types of payments are available in Adarccomputer.com?",
+        "description": "We provide Cash on Delivery and Online payment via Credit Card and Debit Card on Adarccomputer.com (the “website”). The online payment option is done through a ‘personal payment link’ that we share to you after you place the order on the website. All the online transactions are 100% secure and PCI Compliant. In case of any payment related issues, feel free to contact sales@adarccomputer.com"
+    },
+    {
+        "title": "What is Cash/Card on Delivery?",
+        "description": "If you are not comfortable making an online payment on the website or transferring money to our bank account, you can opt for the Cash/Card on Delivery (COD) payment method instead. With COD you can pay in cash at the time of actual delivery of the product at your doorstep, without requiring you to make any advance payment online."
+    },
+    {
+        "title": "Is it safe to use my credit/debit card on Adarccomputer.com?",
+        "description": "Your online transaction on Adarccomputer.com is secure with the highest levels of transaction security currently available on the Internet. The website uses 256-bit encryption technology to protect your card information while securely transmitting it to the respective banks for payment processing. \n\nAll credit card and debit card payments on the website are processed through secure and trusted payment gateways managed by leading banks. Banks now use the 3D secure password service for online transactions, providing an additional layer of security through identity verification."
+    },
+    {
+        "title": "Does Adarccomputer.com keep my credit/debit card information?",
+        "description": "Adarccomputer.com does not save your credit/debit card information on our website. We use Network International payment gateway for online transactions and only store the order reference number at our website. Card information is processed and verified by the payment gateway we integrate."
+    },
+    {
+        "title": "Will you introduce more payment methods in the future?",
+        "description": "We will introduce more payment methods in the future like Wallets, EMI Option and Pay Later facility to make your purchase experience smoother."
+    },
+    {
+        "title": "Whom should I contact if there are any issues related to your payment?",
+        "description": "In case of any payment related issues, feel free to contact us at sales@Adarccomputer.com or reach us by call on +971 2 676 3999."
+    }
+]

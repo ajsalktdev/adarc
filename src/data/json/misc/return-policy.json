@@ -1,0 +1,44 @@
+{
+    "paragraph": "Please read all the conditions below. Adarc computer reserves the right to refuse a return / refund / exchange request. Please make your claims for 'damaged items on delivery' or missing items within 12 hours of receipt of your order.",
+    "data": [
+        {
+            "title": "Is my product eligible for return?",
+            "description": "When the approved repair vendor receives your item, it will be inspected and the issue will be diagnosed. If the defect is covered by the warranty, you should receive your item within 18 business days, but could take slightly longer."
+        },
+        {
+            "title": "How much will the repair cost?",
+            "description": "If your item is still under warranty and the problem is covered by the warranty, and the warranty has not been voided, then your item will be repaired for free.\n\n If your item can't be repaired but is still under the manufacturer's warranty, we will issue a replacement (from the same seller) or, if a replacement isn't available, you will be refunded in full.\n\n If the problem is not covered by the warranty, or if the warranty has been voided (for example if the item has been accidentally damaged), you will be contacted by the approved repair vendor with a quote for repair fees, if the repair is possible. You can decide whether to ask the approved repair vendor to proceed with the repair at an additional cost, or have the item returned to you free of charge. Payment for such repairs, including any applicable delivery charges, will have to be paid on delivery."
+        },
+        {
+            "title": "What is the repair status of my item?",
+            "description": "You can check the status of your repair by following the instructions in the repair confirmation e-mail you receive or by clicking More Details via Service Requests page in your Adarc computer user account, once your submit your repair request. "
+        },
+        {
+            "title": "Warranty policy:",
+            "description": "If you decide to return your purchase, you can do so within 14 days after your purchase. The following conditions apply:",
+            "bulletin": [
+                {
+                    "id": 1,
+                    "text": "The product must be returned with the original packaging, sealed, and unopened"
+                },
+                {
+                    "id": 2,
+                    "text": "If the product has been used, or the product’s original box was opened, or the original seal was removed, we will decline the refund and return the product back to you unless there is a manufacturing defect"
+                },
+                {
+                    "id": 3,
+                    "text": "If the product is not working due to a manufacturing defect,the original box, information booklet, and all other accessories must be returned too"
+                }
+            ],
+            "end_description": "If your item is eligible for a return, you will be able to raise the return request through the Order History page in your Adarc computer user account. Adarc computer returns team shall contact you within 24 hours for claim validation. After confirmation, we will send a courier to collect the item to be returned from you."
+        },
+        {
+            "title": "Cancelling an order",
+            "description": "To request for order cancellation, please notify us either by phone, email, WhatsApp, live chat, or through our social media pages. If you decide to cancel the order, please do so as soon as possible. If you could let us know the reason for cancellation, we will improve our service and perhaps do things a little better next time."
+        },
+        {
+            "title": "Payment refunds",
+            "description": "Refunds are processed within 2-4 working days after the product is returned, inspected, and is accepted for a return. Refunds will be done only through the original mode of payment. Refunds to a credit/debit card may take up to 10 business days to arrive. Refunds to a bank account usually take 1-5 business days to arrive to your bank account."
+        }
+    ]
+}

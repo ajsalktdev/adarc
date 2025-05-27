@@ -1,0 +1,351 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@font-face {
+  font-family: "inter_regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url('../../public/assets/fonts/Inter-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'rubik_light';
+  src: url('../../public/assets/fonts/rubik-variablefont_wght-webfont.woff2') format('woff2'),
+    url('../../public/assets/fonts/rubik-variablefont_wght-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/* @font-face {
+  font-family: 'rubik_regular';
+  src: url('../../public/assets/fonts/rubik-regular-webfont.woff2') format('woff2'),
+    url('../../public/assets/fonts/rubik-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+} */
+@font-face {
+  font-family: 'rubik_regular';
+  src: url('../../public/assets/fonts/NotoSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/* @font-face {
+  font-family: 'rubik_medium';
+  src: url('../../public/assets/fonts/Rubik-Medium.woff2') format('woff2'),
+    url('../../public/assets/fonts/Rubik-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+} */
+@font-face {
+  font-family: 'rubik_medium';
+  src: url('../../public/assets/fonts/NotoSans-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/* @font-face {
+  font-family: 'rubik_semibold';
+  src: url('../../public/assets/fonts/Rubik-SemiBold.woff2') format('woff2'),
+    url('../../public/assets/fonts/Rubik-SemiBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+} */
+@font-face {
+  font-family: 'rubik_semibold';
+  src: url('../../public/assets/fonts/NotoSans-SemiBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'rubik_bold';
+  src: url('../../public/assets/fonts/NotoSans-Bold.woff') format('woff');
+    /* url('../../public/assets/fonts/Rubik-Bold.woff') format('woff'); */
+  font-weight: normal;
+  font-style: normal;
+}
+/* @font-face {
+  font-family: 'rubik_bold';
+  src: url('../../public/assets/fonts/Rubik-Bold.woff2') format('woff2'),
+    url('../../public/assets/fonts/Rubik-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+
+@font-face {
+  font-family: 'opensans_regular';
+  src: url('../../public/assets/fonts/OpenSans-Regular.woff2') format('woff2'),
+    url('../../public/assets/fonts/OpenSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'opensans_medium';
+  src: url('../../public/assets/fonts/OpenSans-Medium.woff2') format('woff2'),
+    url('../../public/assets/fonts/opensans-semibold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'opensans_semibold';
+  src: url('../../public/assets/fonts/opensans-semibold-webfont.woff2') format('woff2'),
+    url('../../public/assets/fonts/opensans-semibold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'opensans_bold';
+  src: url('../../public/assets/fonts/OpenSans-Bold.woff2') format('woff2'),
+    url('../../public/assets/fonts/opensans-semibold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'din_black';
+  src: url('../../public/assets/fonts/DIN-Black.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.opensans_regular {
+  font-family: 'opensans_regular' !important;
+}
+.opensans_medium {
+  font-family: 'opensans_medium' !important;
+}
+.opensans_semibold {
+  font-family: 'opensans_semibold' !important;
+}
+.opensans_bold {
+  font-family: 'opensans_bold' !important;
+}
+.rubik_light {
+  font-family: 'rubik_light' !important;
+}
+.rubik_regular {
+  font-family: 'rubik_regular' !important;
+}
+
+.rubik_medium {
+  font-family: 'rubik_medium' !important;
+}
+
+.rubik_semibold {
+  font-family: 'rubik_semibold' !important;
+}
+
+.rubik_bold {
+  font-family: 'rubik_bold' !important;
+}
+
+.inter_regular {
+  font-family: 'inter_regular' !important;
+}
+
+.din_black {
+  font-family: 'din_black' !important;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+    word-wrap: break-word;
+    /* Fallback for older browsers */
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+
+}
+
+html.modal-enabled {
+  overflow: hidden !important;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'inter_regular', Arial, sans-serif !important;
+  vertical-align: baseline;
+  background: none;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+  font-family :'rubik_semibold';
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+p {
+  line-height: 18px;
+  font-size: 14px;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  position: static !important;
+}
+iframe.VIpgJd-ZVi9od-ORHb-OEVmcd  {
+  display: none !important; /* Hides the iframe completely */
+}
+/* cut in three line */
+.three-line-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  display: box;
+  box-orient: vertical;
+  line-clamp: 3;
+}
+
+select.goog-te-combo {
+  color: #FDB514 !important;
+}
+
+.navbar {
+  transition: top 0.3s ease-in-out;
+}
+
+.navbarWrapper{
+  max-width: 1600px;
+  margin : 0 auto ;
+  width: 100%;
+
+}
+
+@media (max-width: 1024px) { /* For screens smaller than 1024px (lg) */
+  .navbarWrapper {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 768px) { /* For screens smaller than 768px (md) */
+  .navbarWrapper {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) { /* For smaller devices (sm) */
+  .navbarWrapper {
+    padding: 0 15px;
+  }
+}
+
+.star {
+  position: relative;
+  display: block;
+  color: transparent;
+  width: 12px;
+  height: 12px;
+  background: #BFBFBF;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.customer_slider_panel{
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+}
+.scroll_image{
+  scroll-snap-align: start;
+
+}
+
+.description_product p,
+.description_product li,
+.description_product a,
+.description_product button,
+.description_product div,
+.description_product td,
+.description_product th,
+.description_product tr,
+.description_product span {
+  font-size: 16px !important;
+}
+
+.description_product h1,
+.description_product h2,
+.description_product h3,
+.description_product h4,
+.description_product h5,
+.description_product h6 {
+  font-size: 20px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .description_product p,
+  .description_product li,
+  .description_product a,
+  .description_product button,
+  .description_product div,
+  .description_product td,
+  .description_product th,
+  .description_product tr,
+  .description_product span {
+    font-size: 14px !important;
+  }
+
+  .description_product h1,
+  .description_product h2,
+  .description_product h3,
+  .description_product h4,
+  .description_product h5,
+  .description_product h6 {
+    font-size: 16px !important;
+  }
+  .description_product td{
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .description_product table{
+    border-radius: 4px !important;
+
+  }
+
+}
+img.no_border{
+  border-radius: 0 !important;
+}
+.slick-dots{
+  background-color: #000;
+}
+
+
