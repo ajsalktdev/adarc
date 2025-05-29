@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { accountMenu } from '@/utils/staticUtils';
+import Link from 'next/link';
 
 function TopNavigation() {
     const pathname = usePathname();
@@ -18,7 +18,7 @@ function TopNavigation() {
                             <Link
                                 key={route.id}
                                 href={route.route}
-                                className={`cursor-pointer px-2 max-sk:px-[6px] max-sk:py-[2px] text-[16px] max-sm:text-[14px] max-sk:text-[12px] max-sj:text-[10px]  py-1 border border-solid border-gray-700 rounded-full text-sm transition-all duration-200 ${
+                                className={`cursor-pointer px-2 max-sk:px-[6px] max-sk:py-[2px] text-[16px] max-sm:text-[14px] max-sk:text-[12px] max-sj:text-[10px] py-1 border border-solid border-gray-700 rounded-full text-sm transition-all duration-200 ${
                                     isActive
                                         ? 'bg-[#ffe000] text-black'
                                         : 'bg-white text-gray-800 hover:bg-gray-100'
