@@ -41,8 +41,8 @@ function MiddleRightSection({ setSearchVisble, searchvisible }: any) {
         <Link aria-label={`go to ${item?.route}`} key={index} className='flex justify-between items-center gap-1' href={item?.route} >
           <div className='relative'>
             <Icon src={item?.icon} width={'24px'} height={'24px'} alt="icon" className="min-w-[24px] w-[24px]   inline-block" />
-            {index == 2 && cartlist?.length > 0 && <div className='absolute -top-[14px]   rounded-full w-[20px] h-[20px] flex items-center justify-center'>
-              <span className='text-yellow-500 text-[12px] md:text-[14px] rubik_regular'>{cartlist?.length}</span>
+            {index == 2 && cartlist?.length > 0 && <div className='absolute -top-[14px] left-1   bg-yellow-500 rounded-full w-[15px] h-[15px] flex items-center justify-center'>
+              <span className=' text-white text-[10px] rubik_regular'>{cartlist?.length}</span>
             </div>}
           </div>
           <h5 className='text-[#fff] max-lg:hidden text-[14px] max-[980px]:text-[13px]'>{item?.label}</h5>

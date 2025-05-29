@@ -17,7 +17,6 @@ export default async function fetchApiData<T>(
   
       if (options?.requireAuth || options?.checkAccessToken) {
         const accessToken = useZustandStore.getState().accessToken;
-        console.log(accessToken,"accessToken");
         
         if (accessToken) {
           headersData = {
@@ -25,11 +24,12 @@ export default async function fetchApiData<T>(
             Authorization: 'Bearer ' + accessToken,
           };
 
-        } else {
-          if (!options?.checkAccessToken) {
-            throw new Error("Access token is required but not available.");
-          }
-        }
+        } 
+        // else {
+        //   if (!options?.checkAccessToken) {
+        //     throw new Error("Access token is required but not available.");
+        //   }
+        // }
       }
   
       const response = await fetch(url, {
@@ -41,7 +41,8 @@ export default async function fetchApiData<T>(
         const data: T = await response.json();
         return data;
       } else {
-        console.log(response,'heyy')
+        const data: T = await response.json()
+        console.log(data,'jvvhvv')
         throw new Error(`API call failed with status: ${response.status}`);
       }
     } catch (error) {

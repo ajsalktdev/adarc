@@ -13,7 +13,7 @@ function Page() {
   const page = searchParams.get('page') || 1;
   const getData = async () => {
 
-    const response = await fetchApiData<any>(`products/list-products?categories=powered-by-asus-content-creation&page=${page}&per_page=24`);
+    const response = await fetchApiData<any>(`products/list-products?categories=powered-by-asus-content-creation&page=${page}&per_page=10`);
     if (response.status_code === 6000) {
       setData(response?.data);
       setPagination(response?.pagination_data)

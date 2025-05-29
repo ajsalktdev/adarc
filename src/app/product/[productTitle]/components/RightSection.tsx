@@ -258,12 +258,13 @@ const addtoWishlist = async () => {
                     <div>
                         <div className=''>
                             <h6 className='rubik_medium text-[12px] text-gunmetal leading-[14px]'>AED {" "}{Number(quantity * data?.price_details?.actual_price).toFixed(2)}</h6>
+                            {data?.stock > 0 && <div className='mt-1'>
+                            <h6 className='rubik_medium text-[14px] text-[gunmetal] leading-[14px]'>stock : {data?.stock}</h6>
+                        </div>}
                         </div>
                     </div>
                 </div>
-                {data?.stock > 0 && <div className='mt-2'>
-                            <h6 className='rubik_medium text-[14px] text-gunmetal leading-[14px]'>stock : {data?.stock}</h6>
-                        </div>}
+               
 
                 <div className='' >
                     <div className=' my-[8px]'>
@@ -280,7 +281,7 @@ const addtoWishlist = async () => {
                     </div>
                 </div>
             </div>
-            <div className='flex flex-row flex-wrap gap-x-[24px] gap-y-[12px] items-center py-[16px] '>
+            <div className='grid grid-cols-2 sm:grid-cols-3  xl:grid-cols-2 gap-x-2  md:gap-x-4 xl:gap-x-0   gap-y-[12px] items-center py-[16px] '>
                 {product?.productPage?.deliveryHighlight?.map((item: any, index: any) => (
                     <DeliveryItemHighlight key={index} item={item} />
                 ))}

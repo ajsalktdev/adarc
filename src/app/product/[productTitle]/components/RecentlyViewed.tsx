@@ -65,7 +65,7 @@ function RecentlyViewed({ className,product }: any) {
 					slidesToScroll: 2,
 				},
 			},
-		],
+		],	
 	};
 
 	return (
@@ -84,7 +84,7 @@ function RecentlyViewed({ className,product }: any) {
 			</div> */}
       <div className=" pb-4"> 
       <h2 >Similiar Products</h2>
-      <div className="mt-2 flex  overflow-x-scroll gap-[5px]  ">
+      <div className="mt-2 flex  overflow-x-scroll no-scrollbar gap-[5px]  ">
 				{recentView?.map((data: any, index: any) => (
 					<Link
 					key={index}

@@ -9,6 +9,7 @@ import strings from '@/utils/string'
 import DropDownButton from '@/components/buttons/DropDownButton'
 import fetchApiData from '@/config/fetch-api-data'
 import ReviewCard from './_components/ReviewCard'
+import EmptySection from '@/components/emptyContainer/EmptySection'
 
 
 export default function Page() {
@@ -38,9 +39,9 @@ export default function Page() {
 
     const [activeItem, setActiveItem] = useState(10000)
     return (
-        <div className='px-6 bg-white relative w-full max-sm:px-3'>
-            <div className='w-full sticky top-0 z-10 bg-[white] '>
-                <div className='w-[30%] pb-5'>
+        <div className='px-6 bg-white relative w-full max-[850px]:px-0 '>
+            <div className='w-full  bg-[white] '>
+                <div className='w-[30%] max-mdx:w-[60%] max-sk:w-[100%] m pb-5'>
                     <CustomTextInput setData={setSearch} value={search}
                         icon={MainSearch}
                         imageAlt={'mainSearch'}
@@ -52,10 +53,13 @@ export default function Page() {
                 </div>
             </div>
             <div className='flex flex-col gap-[16px]'>
-                {orderData?.data.length > 0 &&
+                {orderData?.data?.length > 0 ?
                     orderData.data.map((item: any, index: any) => (
                         <ReviewCard key={index} order={item} />
-                    ))
+                    )) :
+                    (<div className='w-full py-7 '>
+                        <EmptySection title={'No Address Found!'}  />
+                    </div>)
                 }
             </div>
         </div>

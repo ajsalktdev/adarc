@@ -90,7 +90,7 @@ function MiddleSection() {
 					"fixed top-0 h-full w-[340px] sm:w-[400px]  bg-white m shadow-md z-50 overflow-hidden transition-all duration-500 ease-in-out",
 					navMenuActive ? "left-0" : "-left-[500px]"
 				)}>
-				<HamburgerMenu onClose={()=>setNavMenuActive(false)} />
+				<HamburgerMenu onClose={()=>setNavMenuActive(false)} navMenuActive={navMenuActive}/>
 			</div>
 			<div className="bg-PRIMARY_BG h-[88px] sm:h-[70px] w-full">
 				<div className="navbarWrapper flex justify-between items-center h-[50px] sm:h-[70px]  px-[48px]  ">

@@ -51,7 +51,7 @@ export default function ProductAbout({ description, specification }: any) {
 			</div>
 
 			{/* Description Section */}
-			{description?.trim() && <div className="border-t-[0.6px] border-solid border-primary_border pt-[19px] pb-[12px]">
+			{description?.trim() && <div className="border-t-[0.6px] border-solid border-primary_border pt-[19px] ">
 				<h2 className="rubik_semibold text-[20px] mb-2">Description</h2>
 				<div
 					ref={descRef}
@@ -80,7 +80,7 @@ export default function ProductAbout({ description, specification }: any) {
 					<div className="relative w-full bg-white flex flex-col items-center py-3 mt-[-10px]">
 						{/* Gradient Overlay */}
 						{!descExpanded && (
-							<div className="absolute bottom-0 left-0 w-full h-[80px] bg-gradient-to-t from-black to-transparent opacity-40 pointer-events-none z-10" />
+							<div className="absolute bottom-0 left-0 w-full h-[80px] bg-gradient-to-t from-black/15 to-transparent opacity-40 pointer-events-none z-10" />
 						)}
 
 						{/* Button */}
@@ -94,7 +94,7 @@ export default function ProductAbout({ description, specification }: any) {
 			</div>}
 
 			{/* Specification Section */}
-			{specification.trim() && <div className="border-t-[0.6px] border-solid border-primary_border pt-[19px] pb-[12px] mt-[20px]">
+			{specification.trim() && <div className=" border-solid border-primary_border pt-[19px] pb-[12px] ">
 				 <h2 className="rubik_semibold text-[20px] mb-2">
 					Specification
 				</h2>
@@ -118,7 +118,7 @@ export default function ProductAbout({ description, specification }: any) {
 					<div className="relative w-full bg-white flex flex-col items-center py-3 mt-[-10px]">
 						{/* Gradient Overlay */}
 						{!specExpanded && (
-							<div className="absolute bottom-0 left-0 w-full h-[80px] bg-gradient-to-t from-black to-transparent opacity-40 pointer-events-none z-10" />
+							<div className="absolute bottom-0 left-0 w-full h-[80px] bg-gradient-to-t from-black/15 to-transparent opacity-40 pointer-events-none z-10" />
 						)}
 						{/* Button */}
 						<button

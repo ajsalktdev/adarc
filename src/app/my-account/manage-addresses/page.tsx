@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import AddressCard from './_components/AddressCard';
 import AddressForm from './_components/AddressForm';
 import fetchApiData from '@/config/fetch-api-data';
+import EmptySection from '@/components/emptyContainer/EmptySection';
 
 function Page() {
     const [isAddForm, setAddForm] = useState(false)
@@ -50,7 +51,7 @@ function Page() {
     }, []);
 
     return (
-        <div className='flex flex-col max-w-[1000px] p-4 gap-2'>
+        <div className='flex flex-col max-w-[1000px] px-4 pb-5 max-[850px]:px-0 gap-2'>
             {!isAddForm &&
                 <button className='flex justify-start text-[#0457C8] rubik_medium text-[14px]' onClick={handleAdd}>
                     {/* {getIcon({ icon: "plus", className: 'h-[16px] w-[4px]' })} */}
@@ -79,7 +80,7 @@ function Page() {
 
                 </div>
             }
-            {addressData?.length > 0 && addressData?.map((address, index) => (
+            {addressData?.length > 0 ? addressData?.map((address, index) => (
                 <AddressCard
                     key={index}
                     getAddressData={getAddressData}
@@ -88,7 +89,13 @@ function Page() {
                     address={address}
                     setAddForm={setAddForm}
                     setEdit={setEdit} />
-            ))}
+            )) :
+
+                (<div className='w-full py-7 '>
+                    <EmptySection title={'No Address Found!'} button={false} />
+                </div>)
+
+            }
         </div>
     )
 }

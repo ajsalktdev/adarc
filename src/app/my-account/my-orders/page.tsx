@@ -8,6 +8,7 @@ import MainSearch from '../../../../public/assets/icons/mainSearch.svg';
 import strings from '@/utils/string'
 import DropDownButton from '@/components/buttons/DropDownButton'
 import fetchApiData from '@/config/fetch-api-data'
+import EmptySection from '@/components/emptyContainer/EmptySection'
 
 
 export default function Page() {
@@ -19,7 +20,7 @@ export default function Page() {
 
     const getData = async () => {
         try {
-            const responseData = await fetchApiData<any>(`orders/my-orders?q=${search}`, {
+            const responseData = await fetchApiData<any>(`orders/my-orders?q=${tempSearch}`, {
                 requireAuth: true,
             });
             const { status_code, data } = responseData;
@@ -36,13 +37,13 @@ export default function Page() {
 
     useEffect(() => {
         getData();
-    }, [search]);
+    }, [search, tempSearch]);
 
     const [activeItem, setActiveItem] = useState(10000)
     return (
-        <div className='px-6 bg-white relative w-full max-sm:px-3'>
-            <div className='w-full sticky top-0 z-10 bg-[white] '>
-                <div className='w-[30%] pb-5'>
+        <div className='px-6 bg-white relative w-full max-[850px]:px-0'>
+            <div className='w-full  bg-[white] '>
+                <div className='w-[30%] max-mdx:w-[60%] max-sk:w-[100%] m pb-5'>
                     <CustomTextInput
                         icon={MainSearch}
                         imageAlt={'mainSearch'}
@@ -59,7 +60,7 @@ export default function Page() {
                 </div>
             </div>
             <div className='flex flex-col gap-[16px] mb-4'>
-                {orderData?.length > 0 && orderData?.map((item: any, index: any) =>
+                {orderData?.length > 0 ? orderData?.map((item: any, index: any) =>
                     <div key={index}
                         onClick={() => { if (activeItem != index) { setActiveItem(index) } else { setActiveItem(100000) } }}
                         className='flex flex-col border border-solid border-input_border rounded-[6px]  '>
@@ -71,7 +72,13 @@ export default function Page() {
                         </div>
                     </div>
 
-                )}
+                )
+                    :
+
+                    (<div className='w-full py-7 '>
+                        <EmptySection title={'No Orders Found!'}  />
+                    </div>)
+                }
             </div>
         </div>
 

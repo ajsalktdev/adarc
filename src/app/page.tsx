@@ -162,7 +162,8 @@ const accessToken = cookieStore.get("accessToken")?.value;
 					/>
 
 					<CategorySection />
-					<LazyLoadSection>		<RectangleSection
+					<LazyLoadSection>		
+            <RectangleSection
 						className=""
 						datas={productsDatas?.new_arrivals}
 						sectionTitle={"New Arrival"}
@@ -206,7 +207,7 @@ const accessToken = cookieStore.get("accessToken")?.value;
 						/>
 					</LazyLoadSection>	
 					<BottomBanner data={banners?.bottom?.desktop?.single} />
-					{productsDatas?.viewed_by_you.length && (
+					{productsDatas?.viewed_by_you?.length > 0 && (
 						<LazyLoadSection>
 							<RectangleSection
 								className=""

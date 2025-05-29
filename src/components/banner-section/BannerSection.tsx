@@ -6,12 +6,13 @@ import MainMenu from "./MainMenu";
 import fetchApiData from "@/config/fetch-api-data";
 import MainBanner from "./_components/MainBanner";
 import MobileBanner from "./MobileBanner";
+import DesktopSingleBannerSkeleton from "../skeltons/DesktopSingleBannerSkeleton";
 
 const BannerSection = async function ({
 	data,
 	productsDatas,
 	accessToken,
-    banners
+	banners,
 }: any) {
 	const getData = async () => {
 		const response = await fetchApiData<any>(
@@ -46,7 +47,11 @@ const BannerSection = async function ({
                     ))}
                 </div> */}
 				<div className="hidden sm:block">
-					<MainBanner banners={banners} datas={data} data={data?.desktop?.slider} />
+					<MainBanner
+						banners={banners}
+						datas={data}
+						data={data?.desktop?.slider}
+					/>
 				</div>
 
 				<div className="sm:hidden">
@@ -60,25 +65,29 @@ const BannerSection = async function ({
                         </div>
                     ))}
                 </div> */}
-				<div className="max-[480px]:hidden flex max-sm:px-[4px] gap-4">
-					{data?.desktop?.single?.map((item: any, index: any) => (
-						<div
-							key={index}
-							className="w-[50%] flex justify-center rounded-[12px] overflow-hidden bg-yellow-200"
-							style={{ aspectRatio: 2.5 }}>
-							<div className="relative w-full h-full">
-								<Image
-									src={item?.image}
-									alt={`banner-${index}`}
-									fill
-									className="object-cover"
-									loading="lazy"
-									quality={100}
-								/>
+				{data?.desktop?.single ? (
+					<div className="max-[480px]:hidden flex max-sm:px-[4px] gap-4">
+						{data.desktop.single.map((item: any, index: number) => (
+							<div
+								key={index}
+								className="w-[50%] flex justify-center rounded-[12px] overflow-hidden bg-yellow-200"
+								style={{ aspectRatio: 2.5 }}>
+								<div className="relative w-full h-full">
+									<Image
+										src={item?.image}
+										alt={`banner-${index}`}
+										fill
+										className="object-cover"
+										loading="lazy"
+										quality={100}
+									/>
+								</div>
 							</div>
-						</div>
-					))}
-				</div>
+						))}
+					</div>
+				) : (
+					<DesktopSingleBannerSkeleton />
+				)}
 			</div>
 		</div>
 	);

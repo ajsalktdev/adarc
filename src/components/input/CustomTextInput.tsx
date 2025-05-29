@@ -155,7 +155,7 @@ export default function CustomTextInput(
                             />
 
                         </div>
-                        {isIcon && <div className={`ml-[10px] z-50 ${onIconClick ? 'cursor-pointer' : ''}`} onClick={onIconClick ?? undefined}>
+                        {isIcon && <div className={`ml-[10px] z-40 ${onIconClick ? 'cursor-pointer' : ''}`} onClick={onIconClick ?? undefined}>
                             <Icon width={'24px'} height={'24px'} src={icon} alt="icon" />
                         </div>}
                         {type == 'password' && <button type='button' onClick={() => setShowPassword(!showPassword)} className='flex ml-[10px]'>

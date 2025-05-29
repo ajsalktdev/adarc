@@ -49,14 +49,14 @@ const FilterPageBreadCrumbs = () => {
     }
 
     return (
-        <div className="flex items-center gap-2 text-sm text-gray-600 mt-4 mb-2 px-2">
-            {breadcrumbs.map((crumb, index) => (
+        <div className="flex items-center flex-wrap gap-2  max-sk:gap-1 text-sm text-gray-600 mt-4 mb-2 px-2">
+            {breadcrumbs?.map((crumb, index) => (
                 <React.Fragment key={crumb.href}>
-                    {index > 0 && <span className="mx-2">/</span>}
+                    {index > 0 && <span className="mx-2 max-sk:mx-1">{'>'}</span>}
                     {index === breadcrumbs.length - 1 ? (
-                        <span className="text-gray-900 font-medium">{crumb.label}</span>
+                        <span className="text-gray-900 font-medium text-[14px] max-sm:text-[12px]">{crumb?.label}</span>
                     ) : (
-                        <Link href={crumb.href} className="hover:text-gray-900">
+                        <Link href={crumb.href} className="hover:text-gray-900 font-medium text-[14px] max-sm:text-[12px]">
                             {crumb?.label}
                         </Link>
                     )}

@@ -5,7 +5,7 @@ import HighlightSection from "@/components/includes/HighlightSection";
 import FooterLogin from "@/components/footer/FooterLogin";
 import RootLayoutComponent from "@/components/layout/RootLayout";
 import { Metadata } from "next";
-// import GoogleAnalytics from "./GoogleAnalytics";
+import GoogleAnalytics from "./GoogleAnalytics";
 
 
 

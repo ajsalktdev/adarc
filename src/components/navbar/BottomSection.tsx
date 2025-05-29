@@ -87,7 +87,7 @@ function BottomSection() {
           navMenuActive ? 'left-0' : '-left-[500px]'
         )}
       >
-        <HamburgerMenu onClose={()=>setNavMenuActive(false)} />
+        <HamburgerMenu onClose={()=>setNavMenuActive(false)} navMenuActive={navMenuActive}/>
       </div>
 
       <div className="bg-white border-b border-[#C5CBD5] border-solid font-normal text-[16px] rubik_regular max-sm:hidden">

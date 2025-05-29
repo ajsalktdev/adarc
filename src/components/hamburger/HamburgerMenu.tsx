@@ -6,12 +6,12 @@ import { cn } from '@/utils/utils';
 import MegaMenu from '../banner-section/MegaMenu';
 import FirstMenu from './FirstMenu';
 
-const HamburgerMenu = ({onClose}:any) => {
+const HamburgerMenu = ({onClose, navMenuActive }:any) => {
  
 
   return (
     <div className="hamburger-menu h-full no-scrollbar">
-      <FirstMenu onClose={onClose}/>
+      <FirstMenu onClose={onClose} navMenuActive={navMenuActive}/>
     </div>
   );
 };

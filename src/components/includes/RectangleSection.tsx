@@ -195,7 +195,7 @@ function RectangleSection({
 						) : (
 							<div>
 								{ isViewBy ? (
-									<div className="flex gap-[10px] overflow-scroll">
+									<div className="flex gap-[10px] overflow-scroll no-scrollbar">
 										{datas?.map((data: any, index: any) => (
 											<Link
 												key={index}

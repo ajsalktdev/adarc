@@ -7,7 +7,7 @@ export const metadata: Metadata = {  // Change 'Metadata' to 'metadata'
 }
 export default function Page() {
   return (
-    <div className='w-full max-sm:flex max-sm:justify-center'>
+    <div className='w-full max-[850px]:flex max-[850px]:justify-center'>
       <Form/>
     </div>
   )

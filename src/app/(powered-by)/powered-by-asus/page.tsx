@@ -16,7 +16,7 @@ export default function Page() {
     const page = searchParams.get('page') || 1;
     const getData = async () => {
   
-      const response = await fetchApiData<any>(`products/list-products?categories=powered-by-asus&page=${page}&per_page=24`);
+      const response = await fetchApiData<any>(`products/list-products?categories=powered-by-asus&page=${page}&per_page=10`);
       console.log(response, "response");
   
       if (response.status_code === 6000) {

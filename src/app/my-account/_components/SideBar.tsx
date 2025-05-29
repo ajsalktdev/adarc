@@ -14,7 +14,7 @@ export default function SideBar() {
   const [visible, setVisible] = useState(false)
 
   return (
-    <div className="relative">
+    <div className="relative max-[850px]:hidden">
       {/* Sidebar */}
       <div className={`border-r-[1.6px] border-solid max-[850px]:border-none border-primary_border overflow-hidden transition-all duration-200
         ${visible ? 'fixed pt-[140px] top-0 left-0 h-full p-3 max-w-[300px] bg-white z-50 shadow-lg' : ' max-[850px]:w-0'}
@@ -50,16 +50,16 @@ export default function SideBar() {
       </div>
 
       {/* Toggle Button */}
-      <div
+      {/* <div
         className={`absolute hidden border-gray-400 border border-solid rounded-[6px] max-[850px]:flex top-1/2 left-[-10px] transform -translate-y-1/2 w-[20px] p-1 items-center cursor-pointer transition-transform duration-300 ${visible ? 'rotate-0' : 'rotate-180'
           }`}
         onClick={() => setVisible(!visible)}
       >
         <Image src={left_arrow} alt="Toggle Sidebar" height={20} width={20} />
-      </div>
+      </div> */}
 
       {/* Background Overlay */}
-      {visible && <div className="fixed inset-0 bg-black opacity-50 z-40" onClick={() => setVisible(false)}></div>}
+      {/* {visible && <div className="fixed inset-0 bg-black opacity-50 z-40" onClick={() => setVisible(false)}></div>} */}
     </div>
   )
 }

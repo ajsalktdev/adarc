@@ -167,7 +167,7 @@ const Page = async ({ params }: { params: Params }) => {
 				<div className="hidden  md:block w-full">
 					<BreadCrumps product={product} />
 				</div>
-
+				
 				<TopSection
 					productTitle={productTitle}
 					Product={product}

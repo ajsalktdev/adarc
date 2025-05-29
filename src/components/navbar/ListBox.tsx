@@ -26,10 +26,9 @@ function ListBox({ listData,setModal,setSearch }: ListBoxProps) {
                     className={`py-2 px-1 flex  gap-3 hover:bg-gray-100 hover:cursor-pointer ${index !== listData.length - 1 ? 'border-b border-solid border-primary_border' : ''
                         }`}
                         onClick={() => {
+                            router.push(`/product/${item.slug}`);
                             setModal(false);
-                            router.push(`/product/${item.slug}/`);
                             setSearch("");
-                       
                             
                         }}
                 >

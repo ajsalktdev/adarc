@@ -51,6 +51,9 @@ function FilterComponents(
     { label: 'Z – A', slug: 'z-to-a' },
     { label: 'Price ↑', slug: 'price-low-to-high' },
     { label: 'Price ↓', slug: 'price-high-to-low' },
+    { label: 'Old to New', slug: 'old-to-new' },
+    { label: 'New to Old', slug: 'new-to-old' },
+
   ];
 
   useEffect(() => {

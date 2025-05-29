@@ -31,8 +31,8 @@ function PaginationComponent({ paginationData }: PaginationComponentProps) {
 
   const renderPageNumbers = () => {
     const pages = []
-    const currentPage = paginationData.current_page
-    const totalPages = paginationData.total_pages
+    const currentPage = paginationData?.current_page
+    const totalPages = paginationData?.total_pages
 
     // Always show first page
     pages.push(
@@ -99,8 +99,8 @@ function PaginationComponent({ paginationData }: PaginationComponentProps) {
         width={15}
         height={15}
         style={{ transform: 'rotate(180deg)' }}
-        className={`cursor-pointer bg-white rounded-[50%]  ${!paginationData.has_previous_page ? 'opacity-50' : ''}`}
-        onClick={() => paginationData.has_previous_page && handlePageChange(paginationData.previous_page_number)}
+        className={`cursor-pointer bg-white rounded-[50%]  ${!paginationData?.has_previous_page ? 'opacity-50' : ''}`}
+        onClick={() => paginationData?.has_previous_page && handlePageChange(paginationData.previous_page_number)}
       />
 
       {renderPageNumbers()}
@@ -111,8 +111,8 @@ function PaginationComponent({ paginationData }: PaginationComponentProps) {
         alt="Right Arrow"
         width={15}
         height={15}
-        className={`cursor-pointer bg-white rounded-[50%] ${!paginationData.has_next_page ? 'opacity-50' : ''}`}
-        onClick={() => paginationData.has_next_page && handlePageChange(paginationData.next_page_number)}
+        className={`cursor-pointer bg-white rounded-[50%] ${!paginationData?.has_next_page ? 'opacity-50' : ''}`}
+        onClick={() => paginationData?.has_next_page && handlePageChange(paginationData?.next_page_number)}
       />
     </div>
   )

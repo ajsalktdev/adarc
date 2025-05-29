@@ -14,7 +14,7 @@ import LeftArrow from "../../../public/assets/icons/left-arrow.svg";
 import Image from "next/image";
 import { div } from "framer-motion/client";
 
-function FirstMenu({ onClose }: any) {
+function FirstMenu({ onClose, navMenuActive }: any) {
 	const router = useRouter();
 	const { clearAccessToken, userInfo } = useZustandStore();
 	const [isActiveMegaMenu, setActiveMegaMenu] = useState(false);
@@ -80,7 +80,9 @@ function FirstMenu({ onClose }: any) {
 	};
 
 	useEffect(() => {
+
 		getData();
+
 	}, []);
 
 	return (
@@ -173,7 +175,7 @@ function FirstMenu({ onClose }: any) {
 									className="flex px-9 justify-between items-center cursor-pointer py-3">
 									<div className="flex gap-2">
 										<Icon
-											src={section.icon}
+											src={section?.small_icon}
 											height={"18px"}
 											width={"18px"}
 											alt={"vectorIcon"}

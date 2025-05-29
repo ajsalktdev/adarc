@@ -99,7 +99,7 @@ export default function Form() {
     return (
         <>
             <PasswordModal isOpen={isPasswordModal} onClose={closeModal} />
-            <div className='w-[450px]  max-sm:w-[80%]  max-[480px]:w-[90%] ml-[70px] max-sm:ml-[0px] max-sm:mb-[40px] '>
+            <div className='w-[450px]  max-sm:w-[80%]  max-[480px]:w-[100%] ml-[70px] max-sm:ml-[0px] max-sm:mb-[40px] '>
                 <CustomTextInput
                     className="mb-5"
                     placeholder="Full Name"

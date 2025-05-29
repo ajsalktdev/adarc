@@ -83,7 +83,7 @@ export default function page() {
 
 
   return (
-    <div className='px-6 bg-white relative w-full'>
+    <div className='px-6 bg-white relative w-full max-[850px]:px-0'>
       {wishlist.length > 0 ? <div className='w-full flex justify-between'>
         <div className='w-full'>
           <div className='py-[16px]'><h1 className='rubik_medium text-[20px] leading-[24px] text-black '>{strings.title.wishlist}</h1></div>

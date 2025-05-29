@@ -130,14 +130,14 @@ function TopTab({ priceData, sortByOptions, setPriceData, setSortBy, sortBy, fil
         return null;
     })();
 
-    return (<div className='max-sk:px-3'>
+    return (<div className=''>
         <div>
             {
                 heading && <h1>{heading}</h1>
             }
         </div>
 
-        <div className="flex justify-between py-3">
+        <div className="flex justify-between py-3 max-sm:py-2 max-sk:py-1">
             <div className="flex items-center gap-2 flex-wrap">
                 <div className="flex items-center gap-2 flex-wrap">
                     {/* Display path segments as separate filters */}
