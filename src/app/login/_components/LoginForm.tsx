@@ -61,7 +61,7 @@ function LoginForm() {
         try {
             const responseData:any = await postApiData("users/forget-password/", {
                 email: formData.verifyEmail,
-                host_name: 'http://localhost:3000/'
+                host_name: 'https://adarc-two.vercel.app/'
 
             });
 

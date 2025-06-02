@@ -121,7 +121,7 @@ function MiddleSection() {
 						)}
 						<div className="w-[250px] flex gap-6 items-center ">
 							<Link
-								href={"http://localhost:3000/"}
+								href={"/"}
 								className="flex w-full h-full items-center justify-center">
 								<Image
 									src={logo}
