@@ -132,7 +132,7 @@ const Page = async ({ params }: { params: Params }) => {
 	const product = apiData.data;
 
 	return (
-		<Wrapper className=" ">
+		<Wrapper className="">
 			<Head>
 				<title>{product?.name}</title>
 				<meta name="description" content={product?.description} />

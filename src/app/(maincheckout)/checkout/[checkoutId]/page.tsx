@@ -35,7 +35,9 @@ function Page() {
 	const [isAddForm, setAddForm] = useState(false);
 	const [addressData, setAddressData] = useState([]);
 	console.log(addressData, "addressData");
-	const defaultAddress:any = addressData.find((item:any) => item.is_default === true);
+	const defaultAddress: any = addressData.find(
+		(item: any) => item.is_default === true
+	);
 	const defaultAddressPk = defaultAddress ? defaultAddress.pk : null;
 
 	const [deliveryAddress, setDeliveryAddress] = useState<string | null>(null);
@@ -51,8 +53,9 @@ function Page() {
 	const [isRefresh, setRefresh] = useState(false);
 	const [activePayment, setActivePayment] = useState(2);
 	const [orderList, setOrderList] = useState([]);
-	const [isSelfPickUp, setSelfPickup] = useState(false);
 	const [isLoading, setLoading] = useState(false);
+	const [isGift, setGift] = useState(false);
+	const [orderAmountDetails, setOrderAmountDetails] = useState({});
 
 	const router = useRouter();
 
@@ -114,9 +117,10 @@ function Page() {
 				{
 					shipping_address: deliveryAddress,
 					billing_address: deliveryAddress,
-					is_self_pickup: isSelfPickUp,
+					is_self_pickup: deliveryActive === 1,
 					current_status: "completed",
-					is_cash_on_delivery: activePayment === 0 ? true : false,
+					is_cash_on_delivery: activePayment !== 2 ? true : false,
+					is_for_gift: isGift,
 				},
 				undefined,
 				true,
@@ -149,8 +153,10 @@ function Page() {
 			{ requireAuth: true }
 		);
 		if (response?.status_code === 6000) {
-			console.log(response, "ordersss");
-			setOrderList(response?.data);
+			console.log(response?.data, "ordersss");
+			setOrderList(response?.data?.order_items);
+			setGift(response?.data?.is_for_gift);
+			setOrderAmountDetails(response?.data?.order_amount_details);
 		}
 	};
 
@@ -344,9 +350,12 @@ function Page() {
 															: "bg-white"
 													)}>
 													<div>
-                          {index != 1 && <FaRegCreditCard />}
-														{index == 1 && <SiCashapp />}
-
+														{index != 1 && (
+															<FaRegCreditCard />
+														)}
+														{index == 1 && (
+															<SiCashapp />
+														)}
 													</div>
 													<h1 className="rubik_medium text-[16px] ">
 														{item}
@@ -358,10 +367,12 @@ function Page() {
 							</div>
 
 							<PriceDetail
+								isGift={isGift}
+								setGift={setGift}
 								isLoading={isLoading}
 								onClick={() => createOrder()}
-								cartAmountDetails={cartAmountDetails}
-								cartlist={cartlist}
+								cartAmountDetails={orderAmountDetails}
+								cartlist={orderList}
 							/>
 						</div>
 
@@ -377,7 +388,9 @@ function Page() {
 									isRefresh={isRefresh}
 									setRefresh={setRefresh}
 									onClick={() =>
-										router.push(`/product/${item?.product?.slug}`)
+										router.push(
+											`/product/${item?.product?.slug}`
+										)
 									}
 									key={index}
 									product={item}
@@ -387,8 +400,8 @@ function Page() {
 					</div>
 					<div className="hidden mc:block mc:w-[26.6%] mc:min-w-[360px] min sticky z-30 top-[185px] mt-[26px]">
 						<div className="py-[16px]">
-            <h1 className="rubik_medium mb-2 text-[16px] leading-[22px] text-black">
-            Select payment method
+							<h1 className="rubik_medium mb-2 text-[16px] leading-[22px] text-black">
+								Select payment method
 							</h1>
 							<div className="p-4 bg-[#FFF9E94D] flex-col flex gap-3 border-solid border border-[#E2E4E5] rounded-[4px]">
 								{paymethods
@@ -411,17 +424,19 @@ function Page() {
 												onClick={() =>
 													setActivePayment(realIndex)
 												}
-                        className={cn(
-                          "flex w-full items-center gap-[10px] p-2 rounded-[4px] border-solid border border-[#E2E4E5]",
-                          activePayment ===
-                            realIndex
-                            ? "bg-blue-300"
-                            : "bg-white"
-                        )}>
-                        <div>
-                        {index != 1 && <FaRegCreditCard />}
-                          {index == 1 && <SiCashapp />}
-
+												className={cn(
+													"flex w-full items-center gap-[10px] p-2 rounded-[4px] border-solid border border-[#E2E4E5]",
+													activePayment === realIndex
+														? "bg-blue-300"
+														: "bg-white"
+												)}>
+												<div>
+													{index != 1 && (
+														<FaRegCreditCard />
+													)}
+													{index == 1 && (
+														<SiCashapp />
+													)}
 												</div>
 												<h1 className="rubik_medium text-[16px]">
 													{item}
@@ -433,10 +448,12 @@ function Page() {
 						</div>
 
 						<PriceDetail
+							isGift={isGift}
+							setGift={setGift}
 							isLoading={isLoading}
 							onClick={() => createOrder()}
-							cartAmountDetails={cartAmountDetails}
-							cartlist={cartlist}
+							cartAmountDetails={orderAmountDetails}
+							cartlist={orderList}
 						/>
 					</div>
 				</div>

@@ -121,6 +121,31 @@ export default function Page() {
 	// 			}
 	// 		);
 
+  const removeItem = async (id: string) => {
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}carts/remove-cart-item/${id}/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
+        },
+        credentials: "include",
+        body: JSON.stringify({}),
+      });
+  
+      const data = await response.json();
+  
+      if (data?.status_code === 6000) {
+        console.log("Item removed successfully");
+        await getList("noloader"); // pass token if needed
+      } else {
+        console.error("Failed to remove item:", data?.message);
+      }
+    } catch (error) {
+      console.error("Error removing item:", error);
+    }
+  };
+
 	
 
 	// 		const data = await response.json();
@@ -142,18 +167,21 @@ export default function Page() {
 	// 	}
 	// };
 
-	const removeItem = async (id: any) => {
-		const response = await postApiData<ApiResponse<any>>(
-			`carts/remove-cart-item/${id}/`,
-			{},
-			undefined,
-			true
-		);
-		if (response.status_code == 6000) {
-			console.log("hello");
-			await getList("noloader");
-		}
-	};
+	// const removeItem = async (id: any) => {
+	// 	const response = await postApiData<ApiResponse<any>>(
+	// 		`carts/remove-cart-item/${id}/`,
+	// 		{},
+	// 		undefined,
+	// 		true
+	// 	);
+	// 	if (response.status_code == 6000) {
+	// 		console.log("hello");
+	// 		await getList("noloader");
+	// 	}
+	// };
+
+
+
 
 	useEffect(() => {
 		getList("loader");
@@ -197,23 +225,31 @@ export default function Page() {
 		console.log(selectedItems, "itemssss");
 
 		try {
-			const response = await postApiData<ApiResponse<any>>(
-				`orders/create-order/`,
-				{
-					selected_items: selectedItems,
-				},
-				undefined,
-				true
-			);
+			if(accessToken){
+				const response = await postApiData<ApiResponse<any>>(
+					`orders/create-order/`,
+					{
+						selected_items: selectedItems,
+						is_for_gift:isGift
+					},
+					undefined,
+					true
+				);
+	
+				if (response?.status_code === 6000) {
+					const id = response?.data?.order_id;
+					console.log("Item added checkout!", id);
+	
+					router.push(`/checkout/${id}`);
+				} else {
+					console.error("Failed to add item to cart:", response?.message);
+				}
 
-			if (response?.status_code === 6000) {
-				const id = response?.data?.order_id;
-				console.log("Item added checkout!", id);
-
-				router.push(`/checkout/${id}`);
-			} else {
-				console.error("Failed to add item to cart:", response?.message);
 			}
+			else{
+				router.push('/login')
+			}
+			
 		} catch (error) {
 			console.error("An error occurred while adding to cart:", error);
 		} finally {
@@ -266,9 +302,10 @@ export default function Page() {
 		}
 	};
 
-	// useEffect(() => {
-	//   getAddressData();
-	// }, []);
+	useEffect(() => {
+	  getAddressData();
+	}, []);
+	
 
 	return (
 		<div className="w-full min-h-[100vh]">
@@ -338,7 +375,7 @@ export default function Page() {
 											}}
 										/>
 									</div>
-									{cartlist.map((item: any, index: any) => (
+									{cartlist?.map((item: any, index: any) => (
 										<LargeCard
 											key={index}
 											isCart={true}

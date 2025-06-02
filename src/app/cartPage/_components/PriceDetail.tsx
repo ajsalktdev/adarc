@@ -19,6 +19,7 @@ export default function PriceDetail({
   isGift
 }: any) {
 	const router = useRouter();
+	console.log(cartAmountDetails,'helloooo')
 	return (
 		<div className="flex flex-col rounded-[6px]   border border-solid border-Platinum p-[16px]">
 			{!isCart && (
@@ -27,14 +28,14 @@ export default function PriceDetail({
 						<AmountLine
 							lineThrough={false}
 							title={Strings.cartPage.subTotal}
-							amount={`AED ${cartAmountDetails?.sub_total}`}
+							amount={`AED ${cartAmountDetails?.sub_total-cartAmountDetails?.tax}`}
 							isCount={true}
 							count={cartlist?.length ?? null}
 							titleClass="rubik_medium text-[16px] leading-[20px] "
 							amountClass=""
 						/>
 					</div>
-					<div>
+					{/* <div>
 						<div className="mb-[8px]">
 							<AmountLine
 								title={Strings.cartPage.savings}
@@ -56,7 +57,7 @@ export default function PriceDetail({
 								amountClass=""
 							/>
 						</div>
-					</div>
+					</div> */}
 				</div>
 			)}
 			{!isCart && (
@@ -64,7 +65,7 @@ export default function PriceDetail({
 					<div className="mb-[12px]">
 						<AmountLine
 							title={Strings.cartPage.shipping}
-							amount={"Free"}
+							amount={ cartAmountDetails?.shipping_cost !== 0 ? `AED ${cartAmountDetails?.shipping_cost}` :  "Free"}
 							isCount={false}
 							titleClass="rubik_medium text-[16px] leading-[20px] "
 							amountClass=""

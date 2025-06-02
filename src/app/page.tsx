@@ -115,15 +115,6 @@ const slider_settings = {
 //   description: 'Your Trusted Source for High-End Gaming PCs & Components in UAE',
 // }
 const Page = async function () {
-	const generateDeviceId = () => {
-		const deviceID =
-			"device-" +
-			Math.random().toString(36).slice(2, 9) +
-			Math.random().toString(36).slice(2, 9);
-		console.log(deviceID, "deviceID");
-	};
-	generateDeviceId();
-
 	const apiData = await getData();
 	let products = null;
 	if (apiData?.status_code === 6000) {
@@ -152,7 +143,7 @@ const accessToken = cookieStore.get("accessToken")?.value;
 	return (
 		<>
 			<div className="w-full scroll">
-				<Wrapper className="lg:pt-[155px] sm:pt-[150px]  pt-[84px] max-sm:px-0 ">
+				<Wrapper className="lg:pt-[155px] sm:pt-[150px]  pt-[84px] max-sm:w-[100%] ">
 					<div></div>
 					<BannerSection
           banners = {productsDatas}
@@ -226,3 +217,4 @@ const accessToken = cookieStore.get("accessToken")?.value;
 };
 
 export default Page;
+

@@ -113,6 +113,7 @@ export default function ProductAbout({ description, specification }: any) {
 								: specCollapsedHeight,
 					}}
 					dangerouslySetInnerHTML={{ __html: specification }}
+					id="for"
 				/>
 				{specCollapsedHeight !== null && (
 					<div className="relative w-full bg-white flex flex-col items-center py-3 mt-[-10px]">

@@ -4,7 +4,7 @@ import logo from "../../../public/assets/images/logo.svg";
 import MainSearch from "../../../public/assets/icons/mainSearch.svg";
 import Image from "next/image";
 import Menu from "../../../public/assets/icons/white-hamburger.svg";
-import { useRouter } from "next/navigation";
+import { redirect, usePathname, useRouter } from "next/navigation";
 import CustomTextInput from "../input/CustomTextInput";
 import Icon from "../includes/Icon";
 import ListBox from "./ListBox";
@@ -12,6 +12,8 @@ import fetchApiData from "@/config/fetch-api-data";
 import dynamic from "next/dynamic";
 import HamburgerMenu from "../hamburger/HamburgerMenu";
 import { cn } from "@/utils/utils";
+import Link from "next/link";
+
 // Update with the correct path
 
 const MiddleRightSection = dynamic(
@@ -74,6 +76,10 @@ function MiddleSection() {
 			setModal(false);
 		}
 	};
+	useEffect(() => {
+		router.prefetch("/");
+	}, []);
+	const pathname: any = usePathname();
 
 	return (
 		<>
@@ -90,80 +96,109 @@ function MiddleSection() {
 					"fixed top-0 h-full w-[340px] sm:w-[400px]  bg-white m shadow-md z-50 overflow-hidden transition-all duration-500 ease-in-out",
 					navMenuActive ? "left-0" : "-left-[500px]"
 				)}>
-				<HamburgerMenu onClose={()=>setNavMenuActive(false)} navMenuActive={navMenuActive}/>
+				<HamburgerMenu
+					onClose={() => setNavMenuActive(false)}
+					navMenuActive={navMenuActive}
+				/>
 			</div>
-			<div className="bg-PRIMARY_BG h-[88px] sm:h-[70px] w-full">
+			<div className={`bg-PRIMARY_BG ${!pathname?.includes("/login") &&
+							!pathname?.includes("/signup") &&  'h-[88px]'} sm:h-[70px] w-full`}>
 				<div className="navbarWrapper flex justify-between items-center h-[50px] sm:h-[70px]  px-[48px]  ">
 					<div className="flex gap-[25px] w-[65%] max-lg:w-[75%]    ">
-						<button
-							onClick={() => setNavMenuActive(!navMenuActive)}
-							className="max-sm:flex hidden  justify-center items-center">
-							<Icon
-								className="invert"
-								src={Menu}
-								alt="menuIcon"
-								width={"22px"}
-								height={"22px"}
-							/>
-						</button>
-						<div className="max-lg:w-[250px] w-[330px] flex gap-6 items-center ">
-							<a
-								href={"/"}
+						{(!pathname?.includes("/login") &&
+							!pathname?.includes("/signup")) && (
+							<button
+								onClick={() => setNavMenuActive(!navMenuActive)}
+								className="max-sm:flex hidden justify-center items-center">
+								<Icon
+									className="invert"
+									src={Menu}
+									alt="menuIcon"
+									width={"22px"}
+									height={"22px"}
+								/>
+							</button>
+						)}
+						<div className="w-[250px] flex gap-6 items-center ">
+							<Link
+								href={"http://localhost:3000/"}
 								className="flex w-full h-full items-center justify-center">
 								<Image
 									src={logo}
 									alt="logo"
 									height={100}
 									width={100}
-									className="w-[250px] block"
+									className="w-full]"
 								/>
-							</a>
+							</Link>
 						</div>
-						<div className="items-center z-10 flex w-full relative max-sm:w-[0px]">
-							<CustomTextInput
-								setData={setSearch}
-								value={search}
-								icon={MainSearch}
-								imageAlt={"mainSearch"}
-								isIcon={true}
-								className={"mb-0 max-sm:hidden"}
-								inputStyle="bg-[white]"
-								placeholder={"What are you looking for ? "}
-								onChange={(
-									e: React.ChangeEvent<HTMLInputElement>
-								) => onChange(e.target.value)}
-								onIconClick={() => {
-									if (search?.trim()) {
-										// Check if search has a non-empty string
-										router.push(`/search?q=${search}`);
-									} else {
-										console.log(
-											"Search input is empty. Please enter a search term."
-										);
-									}
-								}}
-								onKeyDown={handleKeyDown}
+						{/* <div
+							onClick={() => {
+
+									router.replace('/');
+								
+							}}
+							className="flex w-full h-full items-center justify-center cursor-pointer">
+							<Image
+								src={logo}
+								alt="logo"
+								height={100}
+								width={100}
+								className="w-[250px] block"
 							/>
-							{!searchvisible && ismodal && (
-								<div
-									className="w-full max-h-[300px] bg-[white] absolute top-[86px] sm:top-[46px] overflow-y-scroll no-scrollbar"
-									// ref={modalRef}
+						</div> */}
+						{(!pathname?.includes("/login") &&
+							!pathname?.includes("/signup")) && (
+							<div className="items-center z-10 flex w-full relative max-sm:w-[0px]">
+								<CustomTextInput
+									setData={setSearch}
+									value={search}
+									icon={MainSearch}
+									imageAlt={"mainSearch"}
+									isIcon={true}
+									className={"mb-0 max-sm:hidden"}
+									inputStyle="bg-[white]"
+									placeholder={"What are you looking for ? "}
+									onChange={(
+										e: React.ChangeEvent<HTMLInputElement>
+									) => onChange(e.target.value)}
+									onIconClick={() => {
+										if (search?.trim()) {
+											// Check if search has a non-empty string
+											router.push(`/search?q=${search}`);
+										} else {
+											console.log(
+												"Search input is empty. Please enter a search term."
+											);
+										}
+									}}
+									onKeyDown={handleKeyDown}
+								/>
+								{!searchvisible && ismodal && (
+									<div
+										className="w-full max-h-[300px] bg-[white] absolute top-[86px] sm:top-[46px] overflow-y-scroll no-scrollbar"
+										// ref={modalRef}
 									>
-									<ListBox
-										listData={listData}
-										setModal={setModal}
-										setSearch={setSearch}
-									/>
-								</div>
-							)}
-						</div>
+										<ListBox
+											listData={listData}
+											setModal={setModal}
+											setSearch={setSearch}
+										/>
+									</div>
+								)}
+							</div>
+						)}
 					</div>
-					<MiddleRightSection
-						setSearchVisble={setSearchVisble}
-						searchvisible={searchvisible}
-					/>
+					{(!pathname?.includes("/login") &&
+						!pathname?.includes("/signup")) && (
+						<MiddleRightSection
+							setSearchVisble={setSearchVisble}
+							searchvisible={searchvisible}
+						/>
+					)}
 				</div>
-				{
+				{(!pathname?.includes("/login") &&
+					!pathname?.includes("/signup")) && (
 					<div className="block sm:hidden navbarWrapper">
 						<CustomTextInput
 							setData={setSearch}
@@ -193,7 +228,7 @@ function MiddleSection() {
 							<div
 								className="w-[90%] max-h-[300px] bg-[white] absolute top-[86px] sm:top-[46px] overflow-y-scroll no-scrollbar"
 								// ref={modalRef}
-								>
+							>
 								<ListBox
 									listData={listData}
 									setModal={setModal}
@@ -202,7 +237,7 @@ function MiddleSection() {
 							</div>
 						)}
 					</div>
-				}
+				)}
 			</div>
 		</>
 	);

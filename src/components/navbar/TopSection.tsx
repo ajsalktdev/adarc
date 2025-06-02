@@ -6,6 +6,7 @@ import Cookies from 'js-cookie';
 import DropDownButton from '../buttons/DropDownButton';
 import useZustandStore from '@/store/useStore';
 import dynamic from 'next/dynamic';
+import { usePathname } from 'next/navigation';
 // import Googletrans from './googletrans';
 const Googletrans = dynamic(()=>import ('./Googletrans'),{ssr:false}) ;
 
@@ -23,6 +24,7 @@ function TopSection({isNavbarTopVisible}:any) {
   const [isDropActive, setDropActivate] = useState(false)
   const [selectedEmirate, setSelectedEmirate] = useState('Abu dhabi')
   const { deliveryLocation,setDeliveryLocation} = useZustandStore()
+  const pathname = usePathname();
 
   const links = [
     { href: "/", label: strings.navtopsection.order_tracking },
@@ -67,7 +69,8 @@ function TopSection({isNavbarTopVisible}:any) {
       <div className={` w-[100%]    max-sm duration-700 max-sm:top-0 max-sm:left-0 max-sm:transition-all max-sm:transform flex  ${isNavbarTopVisible ? ' max-sm:h-[28px] h-[44px] visible opacity-[1] ' : 'h-0 max-sm:-z-10 sm:h-[44px]  max-sm:opacity-0'  } justify-between items-center `}>
         <div className='flex flex-row-reverse md:flex-row gap-6 max-md:w-full max-md:justify-between '>
           <Googletrans />
-          <div className='flex  items-center gap-[2px] '>
+          {(!pathname?.includes("/login") &&
+							!pathname?.includes("/signup")) && <div className='flex  items-center gap-[2px] '>
             <h6 className=' open_sansregular'>Ship to</h6>
             <div className='hidden sm:block'>{getIcon({ icon: 'flag', className: 'w-[32px]' })}</div>
             <div>
@@ -82,15 +85,16 @@ function TopSection({isNavbarTopVisible}:any) {
                 dropWhite={true}
                 titleClass='text-white rubik_medium leading-[18px] text-[12px]' title={deliveryLocation?.title} />
             </div>
-          </div>
+          </div>}
         </div>
-        <div className='flex gap-6 max-md:hidden'>
+       { (!pathname?.includes("/login") &&
+							!pathname?.includes("/signup")) && <div className='flex gap-6 max-md:hidden'>
           {links?.map((link, index) => (
             <Link aria-label={`go to ${link?.label}`} key={index} href={link.href}>
               {link?.label}
             </Link>
           ))}
-        </div>
+        </div>}
       </div>
     </div>
   );

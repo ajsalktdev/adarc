@@ -17,7 +17,7 @@ import { FaLocationDot } from "react-icons/fa6";
 function Footer() {
 	return (
 		<div className="bg-PRIMARY_BG">
-			<Wrapper className="  w-full text-[#E3E8EF] !py-[24px] ">
+			<Wrapper className="  text-[#E3E8EF] !py-[24px] ">
 				<div className="w-full grid-cols-1 grid sm:grid-cols-2   lg:grid-cols-[2fr_2fr_1.5fr]">
 					<div className=" max-lg:row-span-1">
 						<div className="w-[250px] flex  items-baseline sm:mr-[20px]   max-[850px]:mb-[12px]">

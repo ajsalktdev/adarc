@@ -105,14 +105,18 @@ function LoginForm() {
             const { status_code, message, data } = responseData;
 
             if (status_code === 6000) {
+                route.push("/")
                 if (data) {
+                    console.time("LoginFlow");
                     setAccessToken(data?.access_token);
                     setUserInfo(data?.user_info) // Update the store with the token
                 }
                 // Handle successful login
                 setFormData({ ...formData, email: "", password: "" });
                 // alert("Login successful!");
-                route.push("/")
+                
+            setLoading(false);
+
 
             } else if (status_code === 6001) {
                 setError({ email: true, password: true });
@@ -122,14 +126,18 @@ function LoginForm() {
 
                 // setErrorFields((prev) => ({ ...prev, ...message.body }));
                 // }
+            setLoading(false);
+
             } else {
                 console.warn(`Unexpected status code: ${status_code}`);
+            setLoading(false);
+
             }
         } catch (error) {
             console.error("API POST error:", error);
-        } finally {
             setLoading(false);
-        }
+
+        } 
     };
 
     return (
@@ -249,6 +257,7 @@ function LoginForm() {
                     </div>
 
                     <CustomButton
+                    isDisabled={formData.email.length <= 7 ? true : formData.password.length <= 5 ? true: false}
                         isLoading={loading}
                         onClick={handleLogin}
                         title='Login'

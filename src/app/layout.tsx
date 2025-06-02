@@ -28,8 +28,9 @@ export default function RootLayout({
     <html lang="en" className="no-scrollbar">
             <head>
               <link rel="manifest" href="/manifest.json" />
-              <meta name="theme-color" content="#0000ff" />
+              {/* <meta name="theme-color" content="#000" /> */}
               <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+             
               <meta name="apple-mobile-web-app-status-bar" content="#0000ff" />
             </head>
             <body suppressHydrationWarning={true}>

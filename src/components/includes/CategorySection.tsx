@@ -28,3 +28,4 @@ if (apiData?.status_code === 6000) {
 }
 
 export default CategorySection;
+

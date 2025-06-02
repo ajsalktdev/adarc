@@ -169,7 +169,7 @@ export default function DashboardLayout({
 
     return (
         <div className='min-h-[80vh]'>
-            <Wrapper className='max-sm:px-0 max-sm:pt-[115px]' >
+            <Wrapper className=' max-sm:pt-[115px]' >
                 <div className='w-full flex mt-[12px] max-[680px]:relative'>
                     <LeftFilterSection
                         filterList={filterList}
