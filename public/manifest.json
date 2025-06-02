@@ -2,7 +2,7 @@
     "name": "Adarc Computers",
     "short_name": "Adarc",
     "description": "An e-commerce platform for computers and electronics.",
-    "start_url": "https://adarc-two.vercel.app/",
+    "start_url": "/",
    "display": "standalone",
     "background_color": "#fff",
     "theme_color": "#000",
