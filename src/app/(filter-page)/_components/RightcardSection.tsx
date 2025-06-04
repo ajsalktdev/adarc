@@ -78,7 +78,7 @@ function RightcardSection({
                     filteredData?.length > 0 ?
                         <div className='flex flex-wrap gap-[1%]'>
                             {filteredData?.map((data: any, index: any) => (
-                                <ProductCard key={index} data={data} className=' w-[24%] max-lg:w-[32%] mb-2 max-md:w-[49.3%] max-sm:w-[32%] max-sl:w-[49.3%] cursor-pointer' onClick={() => {
+                                <ProductCard key={index} data={data} className=' w-[24%] max-lg:w-[32.5%] mb-2 max-md:w-[49.3%] max-sm:w-[32.5%] max-sl:w-[49.3%] cursor-pointer' onClick={() => {
                                     router.push(`/product/${data?.slug}`);
                                 }}
                                 />
@@ -96,7 +96,7 @@ function RightcardSection({
 
             </div>
             <div className='w-full flex justify-center items-center py-4'>
-                <PaginationComponent paginationData={paginationData?.length > 0 ? paginationData : []} />
+                <PaginationComponent paginationData={paginationData?.total_pages > 0 ? paginationData : []} />
             </div>
 
         </div>

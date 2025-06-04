@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { Suspense, useEffect, useRef, useState } from 'react'
 import LeftFilterSection from './LeftFilterSection'
 import RightcardSection from './RightcardSection'
 import fetchApiData from '@/config/fetch-api-data';
@@ -240,13 +240,23 @@ function FilterComponents(
     setTempListData(updatedFilters);
     setListData(updatedFilters); // optional if you want to sync this as well
   }, [filterData, searchParams]);
-
+  const ProductCardSkeleton = () => (
+    <div className="w-[24%] max-lg:w-[32%] mb-2 max-md:w-[49.3%] max-sm:w-[32%] max-sl:w-[49.3%] bg-white rounded-lg shadow-sm p-4 animate-pulse">
+      <div className="w-full h-48 bg-gray-200 rounded-md mb-4"></div>
+      <div className="space-y-3">
+        <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+        <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+        <div className="h-4 bg-gray-200 rounded w-1/4"></div>
+      </div>
+    </div>
+  );
   return (<>
     <div className='min-h-[80vh]'>
-      <Wrapper className='max-sm:px-0 max-sm:pt-[115px]' >
+      <Wrapper className='w-[100%] max-sm:pt-[115px]' >
         <FilterPageBreadCrumbs />
 
         <div className='w-full flex mt-[12px] max-[680px]:relative'>
+
           <LeftFilterSection
             filterList={filterData}
             setListData={setListData}
@@ -254,30 +264,39 @@ function FilterComponents(
             setPriceData={setPriceData}
           />
 
-          <div className="flex-1 max-sm:px-2">
-            <TopTab
-              filterList={filterList}
-              setListData={setListData}
-              priceData={priceData}
-              setPriceData={setPriceData}
-              setSortBy={setSortBy}
-              sortBy={sortBy}
-              sortByOptions={sortByOptions}
-              setSortOption={setSortOption}
-            />
+          <div className="flex-1 max-sm:px-2  ">
+            <Suspense
+              fallback={
+                <div className="flex flex-wrap justify-between gap-4">
+                  {[...Array(8)].map((_, index) => (
+                    <ProductCardSkeleton key={index} />
+                  ))}
+                </div>
+              }
+            >
+              <TopTab
+                filterList={filterList}
+                setListData={setListData}
+                priceData={priceData}
+                setPriceData={setPriceData}
+                setSortBy={setSortBy}
+                sortBy={sortBy}
+                sortByOptions={sortByOptions}
+                setSortOption={setSortOption}
+              />
 
 
-            <RightcardSection
-              filteredData={filteredData}
-              filterList={filterList}
-              setListData={setListData}
-              priceData={priceData}
-              setPriceData={setPriceData}
-              setSortBy={setSortBy}
-              sortBy={sortBy}
-              paginationData={paginationData}
-            />
-
+              <RightcardSection
+                filteredData={filteredData}
+                filterList={filterList}
+                setListData={setListData}
+                priceData={priceData}
+                setPriceData={setPriceData}
+                setSortBy={setSortBy}
+                sortBy={sortBy}
+                paginationData={paginationData}
+              />
+            </Suspense>
           </div>
         </div>
         <div className="w-full hidden max-sm:block max-sm:sticky bottom-0">
@@ -372,8 +391,8 @@ function FilterComponents(
             )}
           </div>
         </div>
-      </Wrapper>
-    </div>
+      </Wrapper >
+    </div >
 
   </>
   )
