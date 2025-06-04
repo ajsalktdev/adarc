@@ -13,9 +13,10 @@ import { cookies } from "next/headers";
 
 // Define types for props
 interface Params {
-params: {
-    productTitle: string;
-  };}
+	params: {
+		productTitle: string;
+	};
+}
 
 interface ApiResponse<T> {
 	status_code: number;
@@ -73,6 +74,7 @@ const productDetails = async (productTitle: string, accessToken?: string) => {
 				// 	Authorization : `Bearer ${accessToken}`
 				//   }
 				headers,
+				next: { revalidate: 60 }
 				// credentials: "include",
 			}
 		);
@@ -225,8 +227,8 @@ const Page = async ({ params }: { params: any }) => {
 				<TopSection
 					productTitle={productTitle}
 					Product={product}
-					// reviewProduct={review}
-					// recentProduct={recentProduct}
+				// reviewProduct={review}
+				// recentProduct={recentProduct}
 				/>
 
 				<div className="md:hidden mb-[15px] w-full">
