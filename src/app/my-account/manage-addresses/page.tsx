@@ -22,6 +22,7 @@ function Page() {
         mobileNumber: "",
         country: "",
         city: "",
+        region:"",
         streetName: "",
         buildingName: "",
         apartmentName: "",

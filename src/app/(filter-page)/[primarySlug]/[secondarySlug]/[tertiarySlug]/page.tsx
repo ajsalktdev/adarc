@@ -1,15 +1,16 @@
 import React from 'react';
 
-import Wrapper from '@/components/includes/Wrapper';
 import FilterPage from '@/app/(filter-page)/_components/FilterPage';
 
 function Page({ params, searchParams }: { params: any, searchParams: any }) {
 
   return (
-
-    <FilterPage
+<div className='min-h-[60vh]'>
+   <FilterPage
       params={params}
       searchParams={searchParams} />
+  </div>
+   
 
 
   );

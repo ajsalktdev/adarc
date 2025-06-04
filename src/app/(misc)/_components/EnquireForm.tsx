@@ -22,7 +22,7 @@ function EnquireForm() {
         const { fullname, email, mobileNumber, description } = formData;
 
         try {
-            const responseData = await postApiData('users/auth/sign-up/', {
+            const responseData:any = await postApiData('users/auth/sign-up/', {
                 fullname,
                 email,
                 mobileNumber,

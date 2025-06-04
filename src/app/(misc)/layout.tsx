@@ -20,7 +20,7 @@ export default function DashboardLayout({
         .join(" ");
 
     return (
-        <>
+        <div>
             <Wrapper className="max-sm:pt-[150px]">
                 <div className="w-full h-[72px] bg-[#FFF9EBE5] relative overflow-hidden mb-4 rounded-[6px] px-6 flex justify-start items-center">
                     <h2 className="rubik_medium text-[24px] z-10">{capitalizedTitle}</h2>
@@ -36,7 +36,6 @@ export default function DashboardLayout({
                     {children}
                 </section>
             </Wrapper>
-
-        </>
+        </div>
     );
 }

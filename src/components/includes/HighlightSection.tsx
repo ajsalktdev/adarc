@@ -2,7 +2,6 @@ import React from 'react'
 import { getIcon } from '../image/Icon'
 import strings from '@/utils/string'
 import Wrapper from './Wrapper'
-import { div } from 'framer-motion/client'
 // update the path as needed
 
 function HighlightSection({isDescription=true}:any) {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import EmptySection from '../emptyContainer/EmptySection';
+import Image from 'next/image';
 
 
 type ListBoxProps = {
@@ -33,7 +34,7 @@ function ListBox({ listData,setModal,setSearch }: ListBoxProps) {
                         }}
                 >
                     <div className='min-w-[50px] min-h-[50px] max-w-[50px] max-h-[50px] flex justify-center items-baseline'>
-                        <img src={item?.primary_attachment} alt='image' />
+                        <Image width={100} height={100} src={item?.primary_attachment} alt='image' />
                     </div>
                     <div className=''>
                         <div className="rubik_medium text-[12px]">{item?.name}</div>

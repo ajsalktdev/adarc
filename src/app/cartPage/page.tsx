@@ -334,27 +334,27 @@ export default function Page() {
 						<div className="flex flex-col max-mc:items-center mc:flex-row mc:justify-between mc:relative w-full gap-[16px] min-h-[calc(100vh-200px)]">
 							<div className="md:w-[80%] mc:w-[65.55%]">
 								<div className="h-auto mb-5 w-full border border-solid border-Platinum px-[12px] sm:px-[24px] py-[16px] rounded-[4px]">
-									{selectedAddress?.city?.region
+									{selectedAddress?.region
 										?.delivery_time ? (
 										<TitleComponent
-											title={`Free shipping Arrives at ${selectedAddress?.city?.region?.delivery_time}`}
+											title={`Free shipping Arrives at ${selectedAddress?.region?.delivery_time}`}
 											titleClass="text-[20px] font-semibold mb-3"
 										/>
 									) : (
-										"No delevery date"
+										"No delivery date"
 									)}
 									<div className="flex justify-between items-center">
-										<div className="flex items-center gap-[2px]">
-											<TitleComponent title="Delivery to " />
+										<div className="flex max-sm:flex-col text-left  items-center  gap-[2px]">
+											<p className="text-left text-[16px] max-sm:w-full  ">Delivery to</p>
 											<TitleComponent
-												titleClass="underline"
+												titleClass="underline  "
 												title={(() => {
 													const addressParts = [
 														selectedAddress?.apartment_address,
 														selectedAddress?.building_name,
 														selectedAddress?.street_address,
-														selectedAddress?.city
-															?.name,
+														selectedAddress?.region.name,
+														selectedAddress?.city,
 														selectedAddress?.country
 															?.name,
 													].filter(Boolean); // Remove empty/null/undefined values

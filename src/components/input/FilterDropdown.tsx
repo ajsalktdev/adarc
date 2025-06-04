@@ -15,7 +15,7 @@ type FilterDropdownProps = {
   handleClick?:any
 };
 
-const FilterDropdown: React.FC<FilterDropdownProps> = ({ options, setOption, selectedOption , title ,handleClick }) => {
+const FilterDropdown: React.FC<FilterDropdownProps> = ({ options, setOption, selectedOption , title ,handleClick }:any) => {
   const [isModal, setModal] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 const router = useRouter()
@@ -63,7 +63,7 @@ const router = useRouter()
 
       {isModal && (
         <div className='absolute  border border-solid border-primary_border bg-[#fff] flex flex-col w-full rounded-[6px] mt-2 z-10'>
-          {options.map((option, index) => (
+          {options.map((option:any, index:any) => (
             <button
               key={index}
               className="px-2  text-left text-[14px] rubik_normal text-[#1D252C] hover:bg-gray-100 "

@@ -4,12 +4,12 @@ import data from '@/data/json/misc/privacy-policy.json'
 
 function Page() {
   return (
-    <>
+    <div>
       <div className='text-[14px] rubik_regular mb-3'>
         <p className='text-[14px] rubik_regular leading-[18px]'>{data?.paragraph}</p>
       </div>
       <ContentSection data={data?.data} className='pt-4' />
-    </>
+    </div>
   )
 }
 

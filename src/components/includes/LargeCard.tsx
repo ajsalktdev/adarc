@@ -7,37 +7,23 @@ import QuantityButton from "../buttons/QuantityButton";
 import TitleComponent from "@/app/product/[productTitle]/components/TitleComponent";
 import Tick_icon from "../../../public/assets/icons/tick_blue.svg";
 import { cn } from "@/utils/utils";
-import postApiData from "@/config/post-api-data";
 import RatingReviewModal from "@/app/my-account/_components/RatingReviewModal";
 import Modal from "../modal/Modal";
 import Cookies from "js-cookie";
-import { select_border_grey } from "../../../colors.config";
 import ReturnReasonModal from "@/app/my-account/_components/ReturnReasonModal";
 import CancelModal from "@/app/my-account/_components/CancelModal";
 
-import ReturnPaymentModal from "@/app/my-account/_components/ReturnPaymentModal";
 import StarRatings from "react-star-ratings";
-import { MdDeleteForever, MdOutlineDelete } from "react-icons/md";
+import { MdDeleteForever} from "react-icons/md";
 
-interface ApiResponse<T> {
-	status_code: number;
-	data: T | null;
-	message?: string;
-}
 
 export default function LargeCard({
 	ischeckOut,
-	isSelectedItems,
-	setSelectedItems,
 	moveItem,
-	isRefresh,
-	setRefresh,
 	getList,
 	removeItem,
-	isCart = false,
 	wishlist = false,
 	product,
-	cart = false,
 	onClick,
 	myOrder = false,
 	myReviews = false,
@@ -115,11 +101,6 @@ export default function LargeCard({
 			}, 500);
 		}
 	};
-
-	const orderData = [
-		{ status: "active", updated_at: "2025-01-12T11:35:11.013071Z" },
-		{ status: "pending", updated_at: "2025-01-12T11:35:11.013071Z" },
-	];
 
 	return (
 		<>

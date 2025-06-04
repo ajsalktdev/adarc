@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 import TopSection from "../navbar/TopSection";
 import MiddleSection from "../navbar/MiddleSection";
 import BottomSection from "../navbar/BottomSection";
-import Breadcrumbs from "../navbar/Breadcrumbs";
 
 function Navbar() {
 	const pathname = usePathname();

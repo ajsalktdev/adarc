@@ -122,9 +122,9 @@ export default function RightSection({ Product, productTitle, data }: any) {
 	//     }
 	//   };
 
-	const addtoCart = async (isType?: string) => {
+	const addtoCart = async (isType?: any) => {
 		const API_URL = process.env.NEXT_PUBLIC_API_URL;
-		isType === "checkout" ? setBuyLoader(true) : setLoader(true);
+		 setLoader(true);
 
 		try {
 			const headers: Record<string, string> = {
@@ -173,14 +173,12 @@ export default function RightSection({ Product, productTitle, data }: any) {
 		} catch (err) {
 			console.log("Add to cart failed:", err);
 		} finally {
-			isType === "checkout" ? setBuyLoader(false) : setLoader(false);
 
-			if (isType == "cart") {
 				setAddtoCartButton("Added to Cart");
 				setTimeout(() => {
 					setAddtoCartButton(strings.button.addCart);
 				}, 2000);
-			}
+			
 		}
 	};
 
@@ -253,8 +251,7 @@ export default function RightSection({ Product, productTitle, data }: any) {
 	//     }
 	// };
 
-	const getCartList = async (isType?: string, cartId?: string) => {
-		isType === "checkout" && setBuyLoader(true);
+	const getCartList = async (isType?: any, cartId?: string) => {
 
 		const response = await fetchApiData<ApiResponse<any>>(
 			"carts/list-cart-items/",

@@ -1,10 +1,11 @@
+import Image from 'next/image'
 import React from 'react'
 
 function FrequentlyBoughtCard({ item }: any) {
 
   return (
     <div className='min-w-[230px] p-2 h-[140px] flex border border-solid border-[#C5CBD5]'>
-      <div className='min-w-[45px] max-w-[45px] overflow-hidden'><img src={item.image} alt="" width={100}
+      <div className='min-w-[45px] max-w-[45px] overflow-hidden'><Image src={item.image} alt="" width={100}
         height={100} /></div>
       <div className='flex flex-col'>
 

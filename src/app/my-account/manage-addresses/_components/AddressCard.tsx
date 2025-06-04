@@ -46,7 +46,7 @@ function AddressCard(
       full_name: address.full_name || "", // ensure it defaults to an empty string if undefined
       email: address.email || "", // add email field if available in the address object
       telephone: address.telephone || "", // use the telephone field
-      country: address.city.region.country.name || "", // assuming address structure has this path
+      // country: address.city.region.country.name || "", // assuming address structure has this path
       city: address.city || "",
       street_address: address.street_address || "",
       building_name: address.building_name || "",
@@ -197,7 +197,7 @@ function AddressCard(
 
           <p className='rubik_regular text-[#717171] text-[14px]'>
             {address?.building_name}, {address?.apartment_address}, {address?.street_address},
-            {address.city.name}, {address.city.region.country.name}
+            {address.city.name}
           </p>
 
           {!cartPage && defaultbutton && !address?.is_default &&

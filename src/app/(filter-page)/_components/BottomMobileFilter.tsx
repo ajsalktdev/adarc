@@ -1,5 +1,4 @@
 "use client"
-import DropDownButton from '@/components/buttons/DropDownButton';
 import React, { useState } from 'react';
 import ChekboxSection from './MobileCheckbox';
 import RightArrow from '../../../../public/assets/icons/rigth_arrow.svg'
@@ -36,7 +35,7 @@ function BottomMobileFilter({
                         className={`flex px-3 flex-col   pb-[12px] ${index !== 0 ? '' : ''
                             }`}
                     >
-                        {!active?.length > 0 &&
+                        {active?.length === 0 &&
                             <div className='flex justify-between ' 
                             
                             onClick={() => handleClick(filter.id)}><div>{filter?.title?.charAt(0).toUpperCase() + filter?.title?.slice(1)}</div>

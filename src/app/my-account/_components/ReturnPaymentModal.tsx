@@ -7,7 +7,7 @@ function ReturnPaymentModal({product}:any) {
   const [selectedReason, setSelectedReason] = useState(null);
 
   // Handle radio button selection
-  const handleRadioChange = (event) => {
+  const handleRadioChange = (event:any) => {
     setSelectedReason(event.target.value);
   };
 

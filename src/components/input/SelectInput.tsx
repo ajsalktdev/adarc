@@ -31,7 +31,7 @@ const SelectInput = ({
   name: string;
   value: any;
   setData: any;
-  isLoading?: Boolean;
+  isLoading?: boolean;
   errorFields?: {
     [key: string]: string;
   };
@@ -153,7 +153,9 @@ const SelectInput = ({
         </span>
         {error && required && !value?.id ? (
           <span className="flex items-center justify-center min-w-[15px] min-h-[15px] ml-[8px]">
-            <img
+            <Image
+            width={100}
+            height={100}
               src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/images/26-07-2023/alert-circle.svg"
               alt="Error"
             />
@@ -162,7 +164,9 @@ const SelectInput = ({
           errorFields &&
           errorFields[name] && (
             <span className="flex items-center justify-center min-w-[15px] min-h-[15px] ml-[8px]">
-              <img
+              <Image
+              width={100}
+              height={100}
                 src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/images/26-07-2023/alert-circle.svg"
                 alt="Error"
               />

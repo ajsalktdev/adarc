@@ -6,7 +6,7 @@ import data from "@/data/json/misc/contact-us.json"
 
 function Page() {
 
-    return (<>
+    return (<div>
 
         <ContentSection data={data} className='pb-0 mb-0'/>
         <div className='w-[500px] pb-5 border-t-[0.6px] border-solid border-primary_border max-sm:w-full mb-6'>
@@ -15,7 +15,7 @@ function Page() {
 
         </div>
 
-    </>
+    </div>
 
     );
 }

@@ -61,7 +61,7 @@ function LoginForm() {
         try {
             const responseData:any = await postApiData("users/forget-password/", {
                 email: formData.verifyEmail,
-                host_name: 'https://adarc-two.vercel.app/'
+                host_name: 'http://localhost:3000/'
 
             });
 
@@ -269,7 +269,7 @@ function LoginForm() {
                 </div>
 
                 <div className='px-6 w-full flex gap-2 '>
-                    <p>doesn't have an account ?</p>
+                    <p>doesn&apos;t have an account ?</p>
                     <Link href={'/signup'} className='underline text-blue-700 rubik_regular text-[14px]'>sign up</Link>
                 </div>
 

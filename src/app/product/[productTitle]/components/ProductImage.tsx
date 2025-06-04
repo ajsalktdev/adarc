@@ -31,6 +31,7 @@ export default function ProductImage({ data }: any) {
 					openShare={openShare}
 					setOpenShare={setOpenShare}
 					isDesktop={true}
+					image={[data?.attachments?.[0]?.attachment]}
 				/>
 			)}
 

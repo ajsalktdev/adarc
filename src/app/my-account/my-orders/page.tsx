@@ -3,7 +3,6 @@ import CustomTextInput from '@/components/input/CustomTextInput'
 import React, { useEffect, useState } from 'react'
 import LargeCard from '@/components/includes/LargeCard'
 import { useRouter } from 'next/navigation'
-import product from '../../../../data.json'
 import MainSearch from '../../../../public/assets/icons/mainSearch.svg';
 import strings from '@/utils/string'
 import DropDownButton from '@/components/buttons/DropDownButton'
@@ -71,7 +70,6 @@ export default function Page() {
                             <LargeCard onClick={() => router.push(`${item.productTitle}`)} myOrder={true} key={index} product={item} />
                         </div>
                     </div>
-
                 )
                     :
 

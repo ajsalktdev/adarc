@@ -82,7 +82,6 @@ import ShoppingBag from "../../../public/assets/icons/shoppingBag.svg";
 import Cart from "../../../public/assets/icons/cart.svg";
 
 function MiddleRightSection({ setSearchVisble, searchvisible }: any) {
-	const router = useRouter();
 	const { cartlist, userInfo } = useZustandStore();
 
 	const isMobile = typeof window !== "undefined" && window.innerWidth <= 480;

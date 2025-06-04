@@ -3,7 +3,6 @@ import { NextResponse, NextRequest } from 'next/server';
 export function middleware(request: NextRequest) {
   const accessToken = request.cookies.get('accessToken');
 
-  const path = request.nextUrl.pathname;
 
   // Check if the user is authenticated (access_token exists)
   if (!accessToken) {

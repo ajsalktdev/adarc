@@ -1,6 +1,5 @@
 import { getIcon } from '@/components/image/Icon';
 import { useSearchParams, useRouter, usePathname, useParams } from 'next/navigation';
-import Link from 'next/link';
 import React from 'react';
 import FilterDropdown from '@/components/input/FilterDropdown';
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import productData from '../../../data.json'
 import Image from 'next/image'
 import Link from 'next/link'
 

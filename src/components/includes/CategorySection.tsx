@@ -8,20 +8,20 @@ const getData = async () => {
   return response;
 }
 
-const CategorySection = async function () {
-const apiData = await getData();
-let categories = null;
-if (apiData?.status_code === 6000) {
-  categories = apiData?.data;
-} else {
-  categories = null; 
-};
+const CategorySection = async function ({featured_categories}:any) {
+// const apiData = await getData();
+// let categories = null;
+// if (apiData?.status_code === 6000) {
+//   categories = apiData?.data;
+// } else {
+//   categories = null; 
+// };
   return (
     <div className=''>
       <RoundSection
         sectionTitle="Shop by Category"
         category={true}
-        data={categories}
+        data={featured_categories}
       />
     </div>
   );

@@ -7,7 +7,7 @@ import { GrNext } from "react-icons/gr";
 import MainBannerSkeleton from "@/components/skeltons/MainBannerSkeleton";
 import { div } from "framer-motion/client";
 
-export default function MainBanner({ banners, data }: any) {
+export default function MainBanner({data}: any) {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const [direction, setDirection] = useState<"right" | "left">("right");
 	const [atStart, setAtStart] = useState(true);
@@ -83,10 +83,6 @@ export default function MainBanner({ banners, data }: any) {
 		
 		<div className="w-full hidden sm:block relative">
 			<div className="relative max-w-[1300px] mx-auto rounded-md overflow-hidden">
-				{!hydrated ? (
-					<MainBannerSkeleton />
-				) : (
-					<>
 						<div ref={containerRef} className="flex overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory">
 							{data.map((item: any, index: any) => (
 								<Link href={item?.link || "#"} key={index} className="w-full min-w-full relative pt-[34.27%] snap-start">
@@ -109,8 +105,6 @@ export default function MainBanner({ banners, data }: any) {
 						<button onClick={() => !atEnd && scroll("right")} className={`absolute top-1/2 right-3 -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2 hidden md:flex transition-opacity ${atEnd ? "opacity-30 cursor-default" : "opacity-100"}`}>
 							<GrNext size={20} />
 						</button>
-					</>
-				 )} 
 			</div>
 		</div>
 	);

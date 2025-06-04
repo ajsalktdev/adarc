@@ -19,7 +19,7 @@ const featureData = [
   { icon: transaction, label: "Secure Transaction" },
 ];
 
-function Page({ params }: any) {
+function Page() {
   return (
     <Wrapper className='flex items-baseline justify-center w-full'>
       <div className='w-full flex flex-col items-center'>

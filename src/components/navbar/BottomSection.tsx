@@ -1,9 +1,7 @@
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
-import DropDownButton from '../buttons/DropDownButton';
 import TitleComponent from '@/app/product/[productTitle]/components/TitleComponent';
 import strings from '@/utils/string';
-import Image from 'next/image';
 import Icon from '../includes/Icon';
 import Menu from '../../../public/assets/icons/menu.svg';
 import dropdownIcon from '../../../public/assets/icons/vector_black.svg';
@@ -17,8 +15,6 @@ import useZustandStore from '@/store/useStore';
 
 function BottomSection() {
   const menuRef = useRef<HTMLDivElement>(null);
-  const { accessToken, clearAccessToken } = useZustandStore();
-  const isLoggedIn = Boolean(accessToken);
   const [isClient, setIsClient] = useState(false);
   const [navMenuActive, setNavMenuActive] = useState(false);
 
@@ -30,11 +26,6 @@ function BottomSection() {
   useEffect(() => {
     setIsClient(true);
   }, []);
-
-  const logout = () => {
-    clearAccessToken();
-    router.push('/');
-  };
 
   useEffect(() => {
     const html = document.documentElement;

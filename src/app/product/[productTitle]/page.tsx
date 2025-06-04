@@ -13,8 +13,9 @@ import { cookies } from "next/headers";
 
 // Define types for props
 interface Params {
-	productTitle: string;
-}
+params: {
+    productTitle: string;
+  };}
 
 interface ApiResponse<T> {
 	status_code: number;
@@ -49,48 +50,46 @@ const getData = async (productTitle: string) => {
 	return response;
 };
 
-
-
-
 const productDetails = async (productTitle: string, accessToken?: string) => {
 	try {
-	  const apiUrl = process.env.API_URL;
-  
-	//   const cookieStore = await cookies();
-	//   const accessToken = cookieStore.get("accessToken")?.value;
-  
-	  const headers: Record<string, string> = {
-		"Content-Type": "application/json",
-	  };
-  
-	  if (accessToken) {
-		headers["Authorization"] = `Bearer ${accessToken}`;
-	  }
-  
-	  const response = await fetch(`${apiUrl}products/view-product/${productTitle}`, {
-		method: "GET",
-		// headers :{
-		// 	Authorization : `Bearer ${accessToken}`
-		//   }
-		headers,
-		// credentials: "include",
-	  });
-  
-	  if (!response.ok) {
-		throw new Error(`Failed to fetch product: ${response.status}`);
-	  }
-  
-	  return await response.json();
+		const apiUrl = process.env.API_URL;
+
+		//   const cookieStore = await cookies();
+		//   const accessToken = cookieStore.get("accessToken")?.value;
+
+		const headers: Record<string, string> = {
+			"Content-Type": "application/json",
+		};
+
+		if (accessToken) {
+			headers["Authorization"] = `Bearer ${accessToken}`;
+		}
+
+		const response = await fetch(
+			`${apiUrl}products/view-product/${productTitle}`,
+			{
+				method: "GET",
+				// headers :{
+				// 	Authorization : `Bearer ${accessToken}`
+				//   }
+				headers,
+				// credentials: "include",
+			}
+		);
+
+		if (!response.ok) {
+			throw new Error(`Failed to fetch product: ${response.status}`);
+		}
+
+		return await response.json();
 	} catch (error) {
-	  console.error("Error fetching product:", error);
-	  return null;
+		console.error("Error fetching product:", error);
+		return null;
 	}
-  };
+};
 
-export async function generateMetadata({ params }: { params: Params }) {
+export async function generateMetadata({ params }: { params: any }) {
 	const { productTitle } = params;
-
-
 
 	const apiData = await fetchApiData<ApiResponse<any>>(
 		`products/view-product/${productTitle}`
@@ -100,16 +99,31 @@ export async function generateMetadata({ params }: { params: Params }) {
 	const product = apiData?.data;
 
 	return {
+		// title: product?.meta_title || product?.name,
+		// description: product?.meta_description || "Default description",
+		// keywords: product?.meta_keywords || "",
 		title: product?.meta_title || product?.name,
 		description: product?.meta_description || "Default description",
 		keywords: product?.meta_keywords || "",
+		openGraph: {
+			title: product?.meta_title || product?.name,
+			description: product?.meta_description || product?.description,
+			images: [product?.attachments?.[0]?.attachment],
+			url: `https://adarc-two.vercel.app/product/${productTitle}`,
+		},
+		twitter: {
+			card: "summary_large_image",
+			title: product?.meta_title || product?.name,
+			description: product?.meta_description || product?.description,
+			images: [product?.attachments?.[0]?.attachment],
+		},
 	};
 }
 
 // This is the server-side page component
-const Page = async ({ params }: { params: Params }) => {
+const Page = async ({ params }: { params: any }) => {
 	const { productTitle } = params;
-	const cookieStore:any= cookies();
+	const cookieStore: any = cookies();
 	const accessToken = cookieStore.get("accessToken")?.value;
 
 	const apiData = await productDetails(productTitle, accessToken);
@@ -134,9 +148,49 @@ const Page = async ({ params }: { params: Params }) => {
 	return (
 		<Wrapper className="">
 			<Head>
-				<title>{product?.name}</title>
+				{/* <title>{product?.name}</title>
 				<meta name="description" content={product?.description} />
-				<meta name="keywords" content={product?.description || ""} />
+				<meta name="keywords" content={product?.description || ""} /> */}
+				<title>{product?.meta_title || product?.name}</title>
+				<meta
+					name="description"
+					content={product?.meta_description || product?.description}
+				/>
+				<meta name="keywords" content={product?.meta_keywords || ""} />
+				<link
+					rel="canonical"
+					href={`https://adarc-two.vercel.app/product/${productTitle}`}
+				/>
+
+				{/* Open Graph */}
+				<meta property="og:type" content="product" />
+				<meta
+					property="og:title"
+					content={product?.meta_title || product?.name}
+				/>
+				<meta
+					property="og:description"
+					content={product?.meta_description || product?.description}
+				/>
+				<meta property="og:image" content={product?.attachments?.[0]?.attachment} />
+				<meta
+					property="og:url"
+					content={`https://adarc-vercel.app/${productTitle}`}
+				/>
+				<meta property="og:site_name" content="Adarc Computers" />
+
+				{/* Twitter Card */}
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta
+					name="twitter:title"
+					content={product?.meta_title || product?.name}
+				/>
+				<meta
+					name="twitter:description"
+					content={product?.meta_description || product?.description}
+				/>
+				<meta name="twitter:image" content={product?.image} />
+				<meta name="twitter:site" content="@adarccomputers" />
 			</Head>
 			<Script
 				type="application/ld+json"
@@ -154,7 +208,7 @@ const Page = async ({ params }: { params: Params }) => {
 							priceCurrency: "INR",
 							availability: "https://schema.org/InStock",
 						},
-						url: `https://adarccomputers.com/${productTitle}`,
+						url: `https://adarc-two.vercel.app/product/${productTitle}`,
 						brand: {
 							"@type": "Organization",
 							name: "Adarc Computers",
@@ -167,7 +221,7 @@ const Page = async ({ params }: { params: Params }) => {
 				<div className="hidden  md:block w-full">
 					<BreadCrumps product={product} />
 				</div>
-				
+
 				<TopSection
 					productTitle={productTitle}
 					Product={product}

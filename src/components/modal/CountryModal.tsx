@@ -42,6 +42,7 @@ export const CountryModal: React.FC<Props> = ({
         setLoading(false);
       }
     } catch (error) {
+      console.log(error)
       setLoading(false);
     }
   };

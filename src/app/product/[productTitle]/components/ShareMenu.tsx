@@ -4,7 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaLink } from "react-icons/fa6";
 
-export default function ShareMenuWrapper({openShare, setOpenShare,isDesktop=false}:any) {
+export default function ShareMenuWrapper({openShare, setOpenShare,isDesktop=false,image}:any) {
 	const menuRef = useRef<HTMLDivElement>(null);
 
 	// Handle clicks outside the share menu
@@ -37,6 +37,7 @@ export default function ShareMenuWrapper({openShare, setOpenShare,isDesktop=fals
 			console.error("Failed to copy:", err);
 		}
 	};
+	const message = `${'product sample' + " - " }${'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nemo, eos adipisci ad autem aperiam cum veritatis, natus ducimus tempora obcaecati asperiores pariatur praesentium a numquam temporibus doloremque. Hic, amet?'+ "\n"}${shareUrl}`;
 
 	return (
 		<div className="relative ">
@@ -52,7 +53,7 @@ export default function ShareMenuWrapper({openShare, setOpenShare,isDesktop=fals
 					</button>
 					<a
 						href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
-							`Check this out: ${shareUrl}`
+							message
 						)}`}
 						target="_blank"
 						rel="noopener noreferrer"
@@ -63,7 +64,7 @@ export default function ShareMenuWrapper({openShare, setOpenShare,isDesktop=fals
 					<a
 						href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
 							shareUrl
-						)}`}
+						)}&quote=${encodeURIComponent('product-sample')}`}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="flex items-center gap-2 text-sm text-gray-800 hover:text-blue-700">

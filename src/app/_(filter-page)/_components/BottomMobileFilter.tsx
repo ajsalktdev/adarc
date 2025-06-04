@@ -36,7 +36,7 @@ function BottomMobileFilter({
                         className={`flex px-3 flex-col   pb-[12px] ${index !== 0 ? '' : ''
                             }`}
                     >
-                        {!active?.length > 0 &&
+                        {active?.length === 0 &&
                             <div className='flex justify-between w-full ' onClick={() => handleClick(filter.id)}><div>{filter?.title?.charAt(0).toUpperCase() + filter?.title?.slice(1)}</div>
 
                                 <Image src={RightArrow} alt="right_arrow" className='h-[16px] w-[16px]'/>

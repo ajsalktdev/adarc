@@ -4,7 +4,7 @@ import logo from "../../../public/assets/images/logo.svg";
 import MainSearch from "../../../public/assets/icons/mainSearch.svg";
 import Image from "next/image";
 import Menu from "../../../public/assets/icons/white-hamburger.svg";
-import { redirect, usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import CustomTextInput from "../input/CustomTextInput";
 import Icon from "../includes/Icon";
 import ListBox from "./ListBox";
@@ -27,6 +27,8 @@ function MiddleSection() {
 	const menuRef = useRef(null);
 	const router = useRouter();
 	const modalRef = useRef<HTMLDivElement>(null);
+		const desktopModalRef = useRef<HTMLDivElement>(null);
+	const mobileModalRef = useRef<HTMLDivElement>(null);
 	const [search, setSearch] = useState("");
 	const [searchvisible, setSearchVisble] = useState(false);
 	const [listData, setData] = useState<any>({});
@@ -45,14 +47,14 @@ function MiddleSection() {
 			console.error("Error fetching data:", error);
 		}
 	};
-	const handleClickOutside = (event: MouseEvent) => {
-		if (
-			modalRef.current &&
-			!modalRef.current.contains(event.target as Node)
-		) {
-			setModal(false);
-		}
-	};
+   const handleClickOutside = (event: MouseEvent) => {
+     if (
+       (desktopModalRef.current && !desktopModalRef.current.contains(event.target as Node)) &&
+       (mobileModalRef.current && !mobileModalRef.current.contains(event.target as Node))
+     ) {
+       setModal(false);
+     }
+   };
 	useEffect(() => {
 		if (ismodal) {
 			document.addEventListener("mousedown", handleClickOutside);
@@ -178,6 +180,7 @@ function MiddleSection() {
 									<div
 										className="w-full max-h-[300px] bg-[white] absolute top-[86px] sm:top-[46px] overflow-y-scroll no-scrollbar"
 										// ref={modalRef}
+														ref={desktopModalRef}
 									>
 										<ListBox
 											listData={listData}
@@ -227,7 +230,8 @@ function MiddleSection() {
 						{ismodal && (
 							<div
 								className="w-[90%] max-h-[300px] bg-[white] absolute top-[86px] sm:top-[46px] overflow-y-scroll no-scrollbar"
-								// ref={modalRef}
+																		ref={mobileModalRef}
+
 							>
 								<ListBox
 									listData={listData}

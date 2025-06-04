@@ -1,7 +1,5 @@
 import React from "react";
 import TitleComponent from "@/app/product/[productTitle]/components/TitleComponent";
-import Link from "next/link";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export default function SecondaryMenu({ data, setActiveMegaMenu, setActiveIndex, activeSlug, onClose }: any) {

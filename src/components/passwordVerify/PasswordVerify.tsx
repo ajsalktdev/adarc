@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import Icon from "../includes/Icon";
 import RedClose from "../../../public/assets/icons/redClose.svg";
-import GreenCheck from "../../../public/assets/icons/greenCheck.svg";
-import { verifyPasswordData } from "@/utils/staticUtils"; // This should be an array of condition messages
 
 export default function PasswordVerify({ isDisabled, setDisabled, data }: any) {
   const verifyPassword = (password: string) => {

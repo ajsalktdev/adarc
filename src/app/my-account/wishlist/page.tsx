@@ -24,7 +24,7 @@ interface ApiResponse<T> {
   message?: string;
 }
 
-export default function page() {
+export default function Page() {
 
   const { wishlist, setWishlist } = useZustandStore()
 

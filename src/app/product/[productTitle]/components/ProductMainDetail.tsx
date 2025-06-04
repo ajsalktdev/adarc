@@ -24,8 +24,8 @@ export default function ProductMainDetail({ productTitle,product }: any) {
                 </div>
             </div>
             {product?.variants.length >= 1 && <div className=' pb-[16px] border-b-[.6px] border-solid border-primary_border'>
-                {product?.variants?.map((item: any) => (
-                    <SelectionComponent productTitle={productTitle} title={item?.name} data={item} />
+                {product?.variants?.map((item: any,index:any) => (
+                    <SelectionComponent key={index} productTitle={productTitle} title={item?.name} data={item} />
                 ))}
             </div>}
             { product?.short_description?.length >= 5 && <div className='py-[16px]  border-b-[.6px] border-solid border-primary_border'>

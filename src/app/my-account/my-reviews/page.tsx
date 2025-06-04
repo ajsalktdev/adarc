@@ -13,9 +13,8 @@ import EmptySection from '@/components/emptyContainer/EmptySection'
 
 
 export default function Page() {
-    const router = useRouter()
     const [search, setSearch] = useState('')
-    const [orderData, setOrderData] = useState()
+    const [orderData, setOrderData] = useState<any>()
     const getData = async () => {
         try {
             const responseData = await fetchApiData<any>("ratings/list-my-reviews/", {

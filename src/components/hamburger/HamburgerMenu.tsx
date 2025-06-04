@@ -1,9 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import VectorIcon from '../../../public/assets/icons/vector_black.svg'
-import fetchApiData from '@/config/fetch-api-data';
-import Icon from '../includes/Icon';
-import { cn } from '@/utils/utils';
-import MegaMenu from '../banner-section/MegaMenu';
+import React from 'react';
 import FirstMenu from './FirstMenu';
 
 const HamburgerMenu = ({onClose, navMenuActive }:any) => {

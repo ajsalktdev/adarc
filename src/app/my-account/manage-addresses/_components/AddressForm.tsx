@@ -1,5 +1,4 @@
 "use client"
-import TitleComponent from '@/app/[productTitle]/components/TitleComponent';
 import CustomButton from '@/components/buttons/CustomButton'
 import CustomTextInput from '@/components/input/CustomTextInput';
 import SelectInput from '@/components/input/SelectInput';
@@ -40,7 +39,7 @@ export default function Form(
     // Function to handle form submission
     const getData = async () => {
         try {
-            const responseData = await fetchApiData<any>("core/list-cities/", {
+            const responseData = await fetchApiData<any>("core/list-regions/", {
             });
             const { status_code, data } = responseData;
             if (status_code === 6000) {
@@ -63,7 +62,9 @@ export default function Form(
                 email: formData?.email,
                 telephone: formData?.telephone,
                 country: selectedCountry?.country || "UAE",
-                city: formData?.city?.pk,
+                city: formData?.city,
+                region: formData?.region?.slug,
+
                 street_address: formData?.street_address,
                 building_name: formData.building_name,
                 apartment_address: formData.apartment_address
@@ -95,6 +96,7 @@ export default function Form(
                 console.warn(`Unexpected status code: ${status_code}`);
             }
         } catch (error) {
+            console.log(error)
             setIsError(true);
         } finally {
         }
@@ -136,10 +138,10 @@ export default function Form(
                     <div className='w-[48%]'>
                         <SelectInput
                             label=""
-                            name="city"
-                            placeholder="Choose City "
+                            name="region"
+                            placeholder="Choose Emirate "
                             required={true}
-                            value={formData?.city}
+                            value={formData?.region}
                             setData={setFormData}
                             error={isError}
                             className=" text-[#364152] text-[14px] font-medium"
@@ -149,6 +151,19 @@ export default function Form(
                             setErrorFields={setErrorFields}
                         />
 
+                    </div>
+                     <div className='w-[48%]'>
+                        <CustomTextInput
+                            className="mb-5 "
+                            placeholder="city"
+                            name="city"
+                            value={formData.city}
+                            setData={setFormData}
+                            isError={isError}
+                            errorFields={errorFields}
+                            setErrorFields={setErrorFields}
+
+                        />
                     </div>
                     <div className='w-[48%]' >
 

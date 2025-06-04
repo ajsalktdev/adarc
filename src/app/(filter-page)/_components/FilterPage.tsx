@@ -66,7 +66,7 @@ const FilterPage = async ({ params, searchParams }: {
 
     if (filterData?.status_code !== 6000 ) {
         return (
-            <Wrapper>
+            <Wrapper className=''>
                 <div className="text-center py-[48px]">
                     <h1>Product Not Found</h1>
                     <p>Please check the product title or try again later.</p>

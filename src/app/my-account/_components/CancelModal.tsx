@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import ReturnPaymentModal from './ReturnPaymentModal';
 import postApiData from '@/config/post-api-data';
 
-function cancelModal({ product, onClose }: any) {
+function CancelModal({ product, onClose }: any) {
   const [selectedReason, setSelectedReason] = useState<string | null>(null);
 const [paymentMethode, setPaymentMethode] = useState(false);
 
@@ -87,4 +87,4 @@ const [paymentMethode, setPaymentMethode] = useState(false);
   );
 }
 
-export default cancelModal;
+export default CancelModal;

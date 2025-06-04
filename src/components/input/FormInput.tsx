@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { ChangeEvent, FC, useState } from "react";
 import Image from "next/image";
 import { cn } from "@/utils/utils";
@@ -7,13 +7,13 @@ import EyeClose from '../../../public/assets/icons/eyeClose.svg'
 import Icon from "../includes/Icon";
 
 interface InputProps {
-    isLabel: boolean;
-    type: "text" | "name" | "number" | "email" | "aadhar" | string;
-    label: string;
-    value: string | number;
-    name: string;
-    placeholder: string;
-    error: boolean;
+    isLabel?: boolean;
+    type?: "text" | "name" | "number" | "email" | "aadhar" | string;
+    label?: string;
+    value?: string | number;
+    name?: string;
+    placeholder?: string;
+    error?: boolean;
     disabled?: boolean;
     required?: boolean;
     setData: (data: any) => void;

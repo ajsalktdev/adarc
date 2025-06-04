@@ -20,9 +20,7 @@ declare global {
 function TopSection({isNavbarTopVisible}:any) {
   
 
-  const language = Cookies.get('googtrans');
   const [isDropActive, setDropActivate] = useState(false)
-  const [selectedEmirate, setSelectedEmirate] = useState('Abu dhabi')
   const { deliveryLocation,setDeliveryLocation} = useZustandStore()
   const pathname = usePathname();
 

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-export default function Breadcrumbs({tabs}:any) {
+export default function Breadcrumbs() {
 
   const breadcrumbsMenu = [
     {Link : 'Home' },

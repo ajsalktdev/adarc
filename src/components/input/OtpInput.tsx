@@ -1,10 +1,10 @@
-import React, { useState, KeyboardEvent } from 'react';
+import React, {KeyboardEvent } from 'react';
 
 function OtpInput({otp,setOtp}:{otp:any, setOtp:any}) {
 
   const handleChange = (element: HTMLInputElement, index: number) => {
     if (!isNaN(Number(element.value))) {
-      let newOtp = [...otp];
+      const newOtp = [...otp];
       newOtp[index] = element.value;
       setOtp(newOtp);
 
@@ -22,7 +22,7 @@ function OtpInput({otp,setOtp}:{otp:any, setOtp:any}) {
           ((event.target as HTMLInputElement).previousSibling as HTMLInputElement).focus();
         }
       }
-      let newOtp = [...otp];
+      const newOtp = [...otp];
       newOtp[index] = "";
       setOtp(newOtp);
     }

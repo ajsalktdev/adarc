@@ -8,35 +8,14 @@ import MainBanner from "./_components/MainBanner";
 import MobileBanner from "./MobileBanner";
 import DesktopSingleBannerSkeleton from "../skeltons/DesktopSingleBannerSkeleton";
 
-const BannerSection = async function ({
-	data,
-	productsDatas,
-	accessToken,
-	banners,
-}: any) {
-	const getData = async () => {
-		const response = await fetchApiData<any>(
-			"products/list-all-categories/"
-		);
-		console.log(response, "categoriessss");
-		return response;
-	};
-
-	const apiData = await getData();
-	let categories = null;
-	if (apiData?.status_code === 6000) {
-		categories = apiData?.data;
-	} else {
-		categories = null;
-	}
-
+const BannerSection = async function ({ data, featured_categories }: any) {
 	return (
 		<div
 			className="my-8  w-full flex gap-6 max-sm:mb-4  max-[480px]:mb-2"
 			//  style={{ height: 'calc(100vh - 290px)' }}
 		>
 			<div className="w-[25%] relative z-20 hidden xl:block">
-				<MainMenu data={categories} />
+				<MainMenu data={featured_categories} />
 			</div>
 			<div className="xl:w-[75%] w-[100%] h-full flex flex-col gap-4 overflow-hidden">
 				{/* <div ref={imageref}  className="h-[58%] w-full  flex justify-center   overflow-x-scroll">
@@ -47,11 +26,7 @@ const BannerSection = async function ({
                     ))}
                 </div> */}
 				<div className="hidden sm:block">
-					<MainBanner
-						banners={banners}
-						datas={data}
-						data={data?.desktop?.slider}
-					/>
+					<MainBanner data={data?.desktop?.slider} />
 				</div>
 
 				<div className="sm:hidden">

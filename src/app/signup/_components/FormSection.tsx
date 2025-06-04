@@ -271,7 +271,7 @@ function FormSection() {
           />
 
           <p className="text-[10px] rubik_regular mt-3">
-            By selecting "Create Account" you agree that you are subject to
+            By selecting &quot;Create Account&quot; you agree that you are subject to
             Adarc Computers Notice of
             <span className="rubik_semibold"> Privacy Practices</span> and
             <span className="rubik_semibold">Legal Notice</span>

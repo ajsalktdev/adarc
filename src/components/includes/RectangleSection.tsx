@@ -4,47 +4,37 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import { cn } from "@/utils/utils";
 import TitleSection from "./TitleSection";
-import ScrollIcon from "./ScrollIcon";
 import Slider from "react-slick";
 import DealCard from "./DealCard";
-import { useRouter } from "next/navigation";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import fetchApiData from "@/config/fetch-api-data";
 import Link from "next/link";
 import { GrNext } from "react-icons/gr";
-import { div } from "framer-motion/client";
 
 function RectangleSection({
 	className,
 	datas,
 	sectionTitle,
-
 	slider_settings,
-
 	isViewMore,
 	viewMoreLink,
 	deals = false,
-	wishlist = false,
 	poweredBy = false,
-	viewBy = false,
-	moreItems,
 	isViewBy = false
 }: {
 	className?: string;
-	datas: any;
-	sectionTitle: string;
+	datas?: any;
+	sectionTitle?: string;
 	slider_settings?: any;
 	wishlist?: any;
 	poweredBy?: any;
-	viewMoreLink: string;
+	viewMoreLink?: string;
 	viewBy?: boolean;
 	moreItems?: boolean;
 	deals?: boolean;
-	isViewMore: boolean;
-	isViewBy : boolean
+	isViewMore?: boolean;
+	isViewBy? : boolean
 }) {
-	const router = useRouter();
 	const [maxIndex, setMaxIndex] = useState(2);
 	const [isMobile, setIsMobile] = useState(false);
 

@@ -14,7 +14,6 @@ import postApiData from "@/config/post-api-data";
 import LargeCard from "@/components/includes/LargeCard";
 import { SiCashapp } from "react-icons/si";
 import data from "../../../../../data.json";
-import { button } from "framer-motion/client";
 
 import { TbTruckDelivery } from "react-icons/tb";
 import { FaRegCreditCard, FaStore } from "react-icons/fa6";
